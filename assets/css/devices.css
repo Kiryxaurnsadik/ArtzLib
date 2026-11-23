@@ -1,0 +1,108 @@
+/* ===== Сцена устройства ===== */
+body.on-device { overflow: hidden; height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+body.on-device #app { display: flex; flex-direction: column; height: 100%; }
+.devnav { display: flex; align-items: center; gap: 12px; padding: 8px 16px; background: #0b0c0a; border-bottom: 1px solid var(--line); flex: none; flex-wrap: wrap; }
+.devnav a { color: var(--text); text-decoration: none; }
+.devnav-back { font-weight: 700; }
+.devnav-tabs { display: flex; gap: 4px; margin: 0 auto; }
+.devnav-tabs a { padding: 4px 12px; border-radius: 3px; font: 500 15px Oswald, sans-serif; text-transform: uppercase; color: var(--muted); }
+.devnav-tabs a.is-cur { background: color-mix(in srgb, var(--f-primary) 45%, #111); color: #fff; }
+.devnav-f { background: #1a1b18; color: var(--text); border: 1px solid var(--line); border-radius: 3px; padding: 4px 6px; }
+.stage { flex: 1; min-height: 0; display: grid; place-items: center; overflow: hidden; position: relative;
+  background: radial-gradient(900px 500px at 50% 40%, #2a2a26, #0c0c0b 75%); }
+.device-root { transform-origin: center center; position: absolute; left: 50%; top: 50%; }
+.stage.is-bare .device-root { position: absolute; left: 0; top: 0; }
+.screen-inner { position: absolute; inset: 0; overflow: hidden; }
+
+/* «Голый» режим на узких экранах: только экран, без корпуса */
+.stage.is-bare { display: block; }
+.stage.is-bare .device-root { width: 100%; height: 100%; }
+.stage.is-bare .agat, .stage.is-bare .laptop, .stage.is-bare .pda { width: 100%; height: 100%; padding: 0; }
+.stage.is-bare .agat-bezel, .stage.is-bare .laptop-lid, .stage.is-bare .pda-case { position: absolute; inset: 0; width: auto; height: auto; padding: 0; border: 0; border-radius: 0; background: #000; box-shadow: none; }
+.stage.is-bare .agat-screen, .stage.is-bare .laptop-screen, .stage.is-bare .pda-screen { position: absolute; inset: 0; border-radius: 0; border: 0; box-shadow: none; }
+.stage.is-bare .agat-plate, .stage.is-bare .agat-led, .stage.is-bare .agat-power, .stage.is-bare .agat-neck, .stage.is-bare .agat-foot,
+.stage.is-bare .laptop-base, .stage.is-bare .laptop-brand, .stage.is-bare .laptop-cam,
+.stage.is-bare .pda-grip, .stage.is-bare .pda-label { display: none; }
+.stage.is-bare .pda-side { position: absolute; right: 6px; bottom: 6px; top: auto; z-index: 50; flex-direction: row; }
+.stage.is-bare .crt-fx { border-radius: 0; }
+
+/* ===== АГАТ 5189 ===== */
+.agat { width: 1040px; height: 900px; position: relative; display: flex; flex-direction: column; align-items: center; }
+.agat-bezel {
+  position: relative; width: 1040px; height: 800px; padding: 56px 60px 140px;
+  background: radial-gradient(120% 80% at 50% 0%, #2c2c2b, #161616 60%), #151515;
+  border-radius: 46px 46px 40px 40px / 40px 40px 60px 60px;
+  box-shadow: inset 0 2px 0 #444, inset 0 -6px 18px #000, 0 30px 60px #000c, 0 0 0 2px #0a0a0a;
+}
+.agat-bezel::before { content: ""; position: absolute; inset: 22px 24px 108px; border-radius: 40px; background: #0d0d0d; box-shadow: inset 0 0 0 3px #222, inset 0 10px 30px #000; }
+.agat-screen { position: relative; width: 100%; height: 100%; border-radius: 34px / 30px; overflow: hidden; background: #000; box-shadow: 0 0 0 4px #050505, inset 0 0 60px #000; }
+.agat-plate { position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%); padding: 14px 44px; background: #090909; border-radius: 6px; box-shadow: inset 0 0 0 3px #2b2b2b, inset 0 0 18px #000; }
+.agat-plate span { font: 700 40px/1 "PT Mono", monospace; letter-spacing: .12em; color: #d8d8d8; text-shadow: 0 0 6px #fff6; }
+.agat-led { position: absolute; right: 120px; bottom: 64px; width: 12px; height: 12px; border-radius: 50%; background: #3dff5a; box-shadow: 0 0 10px #3dff5a, 0 0 2px #fff; }
+.agat-power { position: absolute; right: 80px; bottom: 58px; width: 24px; height: 24px; border-radius: 50%; border: 0; background: #222; box-shadow: inset 0 -2px 3px #000, 0 1px 0 #444; cursor: pointer; }
+.agat-power:hover { background: #333; }
+.agat-neck { width: 220px; height: 50px; background: linear-gradient(#141414, #1e1e1e); clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%); }
+.agat-foot { width: 420px; height: 36px; background: linear-gradient(#232323, #111); border-radius: 10px 10px 4px 4px; box-shadow: 0 12px 30px #000c; }
+
+/* ЭЛТ-эффекты */
+.crt-fx { position: absolute; inset: 0; pointer-events: none; z-index: 40; border-radius: inherit;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px),
+    radial-gradient(130% 110% at 50% 50%, transparent 60%, rgba(0,0,0,.55) 100%);
+  box-shadow: inset 0 0 80px rgba(0,0,0,.6), inset 0 0 8px rgba(120,180,255,.15);
+  animation: crt-flicker 6s infinite steps(1);
+}
+.crt-fx::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,255,255,.07), transparent 35%); border-radius: inherit; }
+@keyframes crt-flicker { 0%, 96%, 100% { opacity: 1; } 97% { opacity: .85; } 98% { opacity: .95; } }
+.agat .screen-inner { filter: saturate(1.12) contrast(1.05); }
+
+/* ===== НОУТБУК ===== */
+.laptop { width: 1180px; height: 800px; display: flex; flex-direction: column; align-items: center; }
+.laptop-lid { position: relative; width: 1080px; height: 690px; padding: 34px 36px 46px; background: linear-gradient(#2b2d31, #1b1c1f); border-radius: 18px 18px 6px 6px; box-shadow: inset 0 1px 0 #55585e, 0 20px 50px #000b; }
+.laptop-cam { position: absolute; top: 13px; left: 50%; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #0b0f14; box-shadow: 0 0 0 2px #333, inset 1px 1px 2px #4a6a8a; }
+.laptop-screen { position: relative; width: 100%; height: 100%; background: #000; overflow: hidden; box-shadow: 0 0 0 2px #0a0a0a; }
+.lcd-fx { position: absolute; inset: 0; pointer-events: none; z-index: 40; background: linear-gradient(115deg, rgba(255,255,255,.06), transparent 40%); }
+.laptop-brand { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font: 600 12px/1 "PT Sans", sans-serif; letter-spacing: .3em; color: #8b8f96; text-transform: uppercase; }
+.laptop-base { width: 1180px; height: 100px; margin-top: -2px; background: linear-gradient(#3a3c41, #26272b 40%, #18191b); clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%); border-radius: 0 0 16px 16px; position: relative; }
+.laptop-keys { position: absolute; left: 14%; right: 14%; top: 10px; height: 46px; background: repeating-linear-gradient(90deg, #111 0 28px, #2a2b2f 28px 31px), #111; border-radius: 4px; opacity: .9; }
+.laptop-pad { position: absolute; left: 50%; bottom: 10px; width: 160px; height: 26px; margin-left: -80px; border-radius: 4px; background: #2e3034; box-shadow: inset 0 1px 3px #000; }
+
+/* ===== КПК ===== */
+.pda { width: 1120px; height: 700px; display: grid; place-items: center; }
+.pda-case { position: relative; width: 1100px; height: 680px; padding: 46px 120px 46px 50px; }
+.pda-screen { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+.pda-fx { position: absolute; inset: 0; pointer-events: none; z-index: 40; }
+.pda-side { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 18px; align-items: center; z-index: 5; }
+.pda-hw { width: 56px; height: 40px; border-radius: 8px; border: 0; cursor: pointer; font: 700 13px Oswald, sans-serif; letter-spacing: .05em; }
+.pda-hw-round { width: 48px; height: 48px; border-radius: 50%; }
+.pda-label { position: absolute; left: 60px; bottom: 14px; font: 600 12px Oswald, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+
+/* S2: металлический корпус с резиновыми накладками */
+.pda-s2 .pda-case {
+  background: linear-gradient(160deg, #a3a5a2, #6c6e6b 40%, #8b8d89 70%, #5c5e5b);
+  border-radius: 44px;
+  box-shadow: inset 0 2px 0 #d8dad6, inset 0 -4px 10px #0007, inset 0 0 0 10px #4e504d, 0 26px 60px #000c;
+}
+.pda-s2 .pda-screen { border-radius: 10px; box-shadow: 0 0 0 6px #1a1a1a, 0 0 0 9px #8a8c88; }
+.pda-s2 .pda-grip { position: absolute; left: 140px; right: 200px; height: 24px; background: repeating-linear-gradient(90deg, #1b1c1b 0 60px, #2a2b2a 60px 66px); border-radius: 10px; }
+.pda-s2 .pda-grip-t { top: -8px; }
+.pda-s2 .pda-grip-b { bottom: -8px; }
+.pda-s2 .pda-hw { background: linear-gradient(#cfd1cd, #8d8f8b); color: #222; box-shadow: inset 0 -2px 0 #6a6c68, 0 2px 4px #0006; }
+.pda-s2 .pda-hw-round { background: radial-gradient(circle at 40% 35%, #e3e5e1, #8a8c88); }
+.pda-s2 .pda-label { color: #2a2b2a; left: auto; right: 26px; bottom: 60px; writing-mode: vertical-rl; transform: rotate(180deg); }
+.pda-s2 .pda-fx { background: linear-gradient(115deg, rgba(255,255,255,.05), transparent 30%); }
+
+/* ТЧ: оливковый пластиковый корпус */
+.pda-shoc .pda-case {
+  background: linear-gradient(170deg, #5d6146, #3d4130 55%, #2e3124);
+  border-radius: 30px 30px 50px 50px;
+  box-shadow: inset 0 2px 0 #7d8262, inset 0 0 0 8px #2a2c20, inset 0 0 0 11px #4b4f38, 0 26px 60px #000c;
+}
+.pda-shoc .pda-screen { border-radius: 4px; box-shadow: 0 0 0 5px #15160f, 0 0 0 8px #6b7052; }
+.pda-shoc .pda-grip { position: absolute; top: 120px; bottom: 120px; width: 16px; background: repeating-linear-gradient(0deg, #23251b 0 10px, #3a3d2c 10px 13px); border-radius: 8px; }
+.pda-shoc .pda-grip-t { left: 16px; }
+.pda-shoc .pda-grip-b { right: 96px; display: none; }
+.pda-shoc .pda-hw { background: linear-gradient(#3a3d2c, #23251b); color: #c9d19a; box-shadow: inset 0 1px 0 #6b7052, 0 2px 4px #0008; }
+.pda-shoc .pda-hw-round { background: radial-gradient(circle at 40% 35%, #b02a1f, #5a0f0a); box-shadow: 0 0 0 4px #23251b; }
+.pda-shoc .pda-label { color: #a9b07c; }
+.pda-shoc .pda-fx { background: repeating-linear-gradient(0deg, rgba(0,0,0,.15) 0 1px, transparent 1px 3px), radial-gradient(120% 120% at 50% 50%, transparent 65%, rgba(0,0,0,.5)); }

@@ -1,0 +1,75 @@
+{
+ "updatedAt": "2026-11-23T23:00:00Z",
+ "adminHash": "00556331f1922e05b96a2cdc254b3e0de0095e9114691803427337fef17bdd4d",
+ "broadcast": "",
+ "screens": {
+  "niichaz": {
+   "agat": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "laptop": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "pda": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   }
+  },
+  "clear-sky": {
+   "agat": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "laptop": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "pda": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   }
+  },
+  "iig": {
+   "agat": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "laptop": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "pda": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   }
+  },
+  "iskra": {
+   "agat": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "laptop": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   },
+   "pda": {
+    "status": "normal",
+    "message": "",
+    "code": ""
+   }
+  }
+ }
+}

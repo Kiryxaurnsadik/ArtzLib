@@ -1,0 +1,112 @@
+// Загрузка данных фракций и состояния экранов.
+// Источник правды: data/factions.json и data/state.json в репозитории.
+// Админка может держать черновик в localStorage этого браузера.
+
+export const DEVICES = {
+  agat: { id: 'agat', name: 'Агат 5189', os: 'Окна XP', desc: 'ЭЛТ-монитор с системой в стиле XP' },
+  laptop: { id: 'laptop', name: 'Ноутбук', os: 'Окна Vista', desc: 'Полевой ноутбук с системой в стиле Vista' },
+  pda: { id: 'pda', name: 'КПК', os: 'ТЧ / S2', desc: 'Карманный компьютер сталкера' },
+};
+
+export const STATUSES = {
+  normal: { label: 'Норма', hint: 'Экран работает как обычно' },
+  locked: { label: 'Заблокировано', hint: 'Доступ закрыт. Можно задать код разблокировки' },
+  wiped: { label: 'Данные стёрты', hint: 'Показывает стирание и пустой диск' },
+  corrupted: { label: 'Сбой / повреждение', hint: 'Помехи, битые данные' },
+  offline: { label: 'Нет сигнала', hint: 'Экран выключен или нет питания' },
+  custom: { label: 'Своё сообщение', hint: 'Окно с вашим текстом поверх экрана' },
+};
+
+const LS_DRAFT = 'artz.draft';
+const LS_USE = 'artz.useDraft';
+
+const safe = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch { /* приватный режим */ } },
+  del(k) { try { localStorage.removeItem(k); } catch { /* */ } },
+};
+export { safe };
+
+async function getJSON(url) {
+  const r = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
+  if (!r.ok) throw new Error(`${url}: ${r.status}`);
+  return r.json();
+}
+
+export function readDraft() {
+  const raw = safe.get(LS_DRAFT);
+  if (!raw) return null;
+  try { return JSON.parse(raw); } catch { return null; }
+}
+export function writeDraft(d) { safe.set(LS_DRAFT, JSON.stringify(d)); }
+export function clearDraft() { safe.del(LS_DRAFT); }
+export function useDraft() { return safe.get(LS_USE) === '1'; }
+export function setUseDraft(v) { v ? safe.set(LS_USE, '1') : safe.del(LS_USE); }
+
+export async function loadPublished() {
+  const [factions, state] = await Promise.all([getJSON('data/factions.json'), getJSON('data/state.json')]);
+  return { factions, state };
+}
+
+export async function loadAll() {
+  const pub = await loadPublished();
+  if (useDraft()) {
+    const d = readDraft();
+    if (d && d.factions && d.state) return { ...d, draft: true };
+  }
+  return { ...pub, draft: false };
+}
+
+export function screenState(state, factionId, deviceId) {
+  const s = state?.screens?.[factionId]?.[deviceId];
+  return { status: 'normal', message: '', code: '', title: '', ...(s || {}) };
+}
+
+const cache = new Map();
+export async function loadDoc(doc) {
+  if (doc.body != null) return doc.body;
+  if (!doc.file) return '';
+  if (cache.has(doc.file)) return cache.get(doc.file);
+  const r = await fetch(doc.file);
+  const t = r.ok ? await r.text() : `> Документ не найден: ${doc.file}`;
+  cache.set(doc.file, t);
+  return t;
+}
+
+// Периодическая проверка состояния экранов, чтобы блокировка
+// появлялась у зрителей без перезагрузки страницы.
+export function watchState(onChange, ms = 15000) {
+  let last = '';
+  const tick = async () => {
+    try {
+      const { state } = await loadAll();
+      const sig = JSON.stringify(state.screens) + (state.broadcast || '');
+      if (last && sig !== last) onChange(state);
+      last = sig;
+    } catch { /* офлайн */ }
+  };
+  tick();
+  const id = setInterval(tick, ms);
+  window.addEventListener('storage', tick);
+  return () => clearInterval(id);
+}
+
+export function factionVars(f) {
+  const c = f.colors || {};
+  return `--f-primary:${c.primary || '#888'};--f-secondary:${c.secondary || '#ccc'};--f-accent:${c.accent || c.primary || '#aaa'};--f-dark:${c.dark || '#111'};`;
+}
+
+export function groupDocs(faction, categories) {
+  const groups = [];
+  const map = new Map();
+  (faction.docs || []).forEach((d) => {
+    const key = d.category || 'research';
+    if (!map.has(key)) {
+      const g = { id: key, name: categories?.[key] || key, docs: [] };
+      map.set(key, g);
+      groups.push(g);
+    }
+    map.get(key).docs.push(d);
+  });
+  return groups;
+}
