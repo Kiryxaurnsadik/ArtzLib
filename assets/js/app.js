@@ -36,7 +36,7 @@ function route() {
   document.body.classList.remove('on-device');
   document.body.style.cssText = '';
   current = null;
-  if (!parts.length) return data.state.catalog ? catalog() : idle();
+  if (!parts.length) return data.state.catalog || window.ARTZ_PREVIEW ? catalog() : idle();
   const f = findFaction(parts[0]);
   if (!f) return idle('Терминал не найден');
   if (f.key && f.key !== key) return idle('Нет доступа к терминалу');
@@ -81,7 +81,7 @@ function catalog() {
       <p>Архивы группировок Чернобыльской аномальной зоны.</p>
     </header>
     <main class="factions">
-      ${data.factions.factions.filter((f) => !f.key).map((f) => `
+      ${data.factions.factions.filter((f) => !f.key || window.ARTZ_PREVIEW).map((f) => `
         <a class="fcard" href="${link(f)}" style="${factionVars(f)}">
           <img src="${f.emblem}" alt="">
           <div><h2>${esc(f.name)}</h2><p>${esc(f.fullName || '')}</p><small>${esc(f.motto || '')}</small></div>
@@ -94,6 +94,7 @@ function factionPage(f, key) {
   document.body.style.cssText = factionVars(f);
   app.innerHTML = `
     ${banner()}
+    ${window.ARTZ_PREVIEW ? '<a class="preview-back" href="#/">← Превью: все группировки</a>' : ''}
     <header class="fhead">
       <img src="${f.emblem}" alt="">
       <div><h1>${esc(f.name)}</h1><p>${esc(f.fullName || '')}</p><small>${esc(f.motto || '')}</small></div>
@@ -113,7 +114,8 @@ function devicePage(f, devId) {
   document.title = `${f.name} · ${dev.name}`;
   document.body.style.cssText = factionVars(f);
   document.body.classList.add('on-device');
-  app.innerHTML = `${banner()}<div class="stage"><div class="device-root device-${dev.skin ? 'pda' : devId}"></div><button type="button" class="fs-btn" title="Только экран, во весь экран" aria-label="Полноэкранный режим"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>`;
+  const back = window.ARTZ_PREVIEW ? `<a class="preview-back" href="#/${f.id}">← Превью: к устройствам группировки</a>` : '';
+  app.innerHTML = `${banner()}${back}<div class="stage"><div class="device-root device-${dev.skin ? 'pda' : devId}"></div><button type="button" class="fs-btn" title="Только экран, во весь экран" aria-label="Полноэкранный режим"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>`;
   const stage = app.querySelector('.stage');
   app.querySelector('.fs-btn').addEventListener('click', () => {
     const on = !stage.classList.contains('is-full');

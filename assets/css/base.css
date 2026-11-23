@@ -116,3 +116,4 @@ img { max-width: 100%; }
 .dthumb-pda-shoc::before, .dthumb-pda-cs::before, .dthumb-pda-cop::before { content: "Энциклопедия   Сведения"; }
 .dthumb-pda-cs { border-color: #6b4a2c; background: #2a1d12; }
 .dthumb-pda-cop { border-color: #4a585c; background: #151d20; }
+.preview-back { display: block; padding: 6px 16px; background: #3a2a10; color: #f0c27a; font-size: 13px; text-decoration: none; flex: none; }
