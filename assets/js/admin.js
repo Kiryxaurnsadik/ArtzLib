@@ -47,11 +47,11 @@ function toast(msg, kind = 'ok') {
   setTimeout(() => t.remove(), 5200);
 }
 const devicesOf = (f) => (Array.isArray(f.devices) && f.devices.length ? f.devices : ALL_DEVICES).filter((d) => DEVICES[d]);
-function ensureScreens(f) {
-  model.state.screens ||= {};
-  model.state.screens[f.id] ||= {};
+function ensureScreens(f, m = model) {
+  m.state.screens ||= {};
+  m.state.screens[f.id] ||= {};
   ALL_DEVICES.forEach((d) => {
-    model.state.screens[f.id][d] = { status: 'normal', message: '', code: '', title: '', ...(model.state.screens[f.id][d] || {}) };
+    m.state.screens[f.id][d] = { status: 'normal', message: '', code: '', title: '', ...(m.state.screens[f.id][d] || {}) };
   });
 }
 function ensureFaction(f) {
@@ -93,9 +93,19 @@ async function login() {
 }
 
 function start() {
-  pub.factions.factions.forEach(ensureFaction);
+  pub.factions.factions.forEach((f) => { ensureFaction(f); ensureScreens(f, pub); });
   const d = readDraft();
-  model = d && d.factions && d.state ? d : clone(pub);
+  const rev = pub.factions.rev || 0;
+  pub.baseRev = rev;
+  if (d && d.factions && d.state && d.baseRev === rev) model = d;
+  else {
+    if (d) {
+      try { localStorage.setItem('artz.draft.old', JSON.stringify(d)); } catch { /* */ }
+      toast('Старый черновик сделан от прошлой версии сайта и больше не используется. Начат новый черновик.');
+    }
+    model = clone(pub);
+    model.baseRev = rev;
+  }
   model.factions.factions.forEach((f) => { ensureFaction(f); ensureScreens(f); });
   if (safe.get('artz.useDraft') === null) setUseDraft(true);
   render();
@@ -672,6 +682,8 @@ function publish(main) {
     btn.disabled = true;
     try {
       const out = clone(model);
+      out.factions.rev = (pub.factions.rev || 0) + 1;
+      out.baseRev = out.factions.rev;
       const say = (t) => { log.textContent = t; };
       await externalize(v, out, say);
       say('Публикация factions.json...');
@@ -708,6 +720,7 @@ function publish(main) {
       else if (j.screens) model.state = j;
       else if (j.factions?.factions && j.state) model = j;
       else throw new Error('неизвестный формат');
+      model.baseRev = pub.factions.rev || 0;
       model.factions.factions.forEach((f) => { ensureFaction(f); ensureScreens(f); });
       save(); toast('Импортировано'); render();
     } catch (err) { toast(`Не удалось импортировать: ${err.message}`, 'err'); }

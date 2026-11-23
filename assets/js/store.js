@@ -59,7 +59,8 @@ export async function loadAll() {
   const pub = await loadPublished();
   if (useDraft()) {
     const d = readDraft();
-    if (d && d.factions && d.state) return { ...d, draft: true };
+    // черновик, сделанный от старой опубликованной версии, не показываем
+    if (d && d.factions && d.state && d.baseRev === (pub.factions.rev || 0)) return { ...d, draft: true };
   }
   return { ...pub, draft: false };
 }
