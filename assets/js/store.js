@@ -3,10 +3,15 @@
 // Админка может держать черновик в localStorage этого браузера.
 
 export const DEVICES = {
-  agat: { id: 'agat', name: 'Агат 5189', os: 'Окна XP', desc: 'ЭЛТ-монитор с системой в стиле XP' },
-  laptop: { id: 'laptop', name: 'Ноутбук', os: 'Окна Vista', desc: 'Полевой ноутбук с системой в стиле Vista' },
-  pda: { id: 'pda', name: 'КПК', os: 'ТЧ / S2', desc: 'Карманный компьютер сталкера' },
+  agat: { id: 'agat', name: 'Агат 5189', desc: 'ЭЛТ-монитор с системой в стиле XP' },
+  laptop: { id: 'laptop', name: 'Ноутбук', desc: 'Полевой ноутбук с системой в стиле Vista' },
+  'pda-s2': { id: 'pda-s2', name: 'КПК S2', skin: 's2', desc: 'КПК в стиле STALKER 2' },
+  'pda-shoc': { id: 'pda-shoc', name: 'КПК ТЧ', skin: 'shoc', desc: 'КПК в стиле «Тени Чернобыля»' },
+  'pda-cs': { id: 'pda-cs', name: 'КПК ЧН', skin: 'cs', desc: 'КПК в стиле «Чистого Неба»' },
+  'pda-cop': { id: 'pda-cop', name: 'КПК ЗП', skin: 'cop', desc: 'КПК в стиле «Зова Припяти»' },
 };
+// старые ссылки
+export const DEVICE_ALIASES = { pda: 'pda-s2' };
 
 export const STATUSES = {
   normal: { label: 'Норма', hint: 'Экран работает как обычно' },
@@ -38,7 +43,9 @@ export function readDraft() {
   if (!raw) return null;
   try { return JSON.parse(raw); } catch { return null; }
 }
-export function writeDraft(d) { safe.set(LS_DRAFT, JSON.stringify(d)); }
+export function writeDraft(d) {
+  try { localStorage.setItem(LS_DRAFT, JSON.stringify(d)); return true; } catch { return false; }
+}
 export function clearDraft() { safe.del(LS_DRAFT); }
 export function useDraft() { return safe.get(LS_USE) === '1'; }
 export function setUseDraft(v) { v ? safe.set(LS_USE, '1') : safe.del(LS_USE); }

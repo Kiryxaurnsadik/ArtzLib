@@ -19,10 +19,10 @@
    "motto": "Wissen schützt — знание защищает",
    "emblem": "assets/img/emblems/niichaz.png",
    "colors": {
-    "primary": "#7a0019",
-    "secondary": "#e8b84a",
-    "accent": "#c8283c",
-    "dark": "#2a0008"
+    "primary": "#1f3f8f",
+    "secondary": "#e9edf2",
+    "accent": "#d0283c",
+    "dark": "#0a1430"
    },
    "location": "Янтарь, МБУ «Янтарь»",
    "user": {
@@ -217,89 +217,65 @@
      "id": "monolith",
      "title": "Община «Монолит»",
      "category": "communities",
-     "file": "content/shared/monolith.md",
+     "file": "content/niichaz/monolith.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     },
     {
      "id": "freedom",
      "title": "Община «Свобода»",
      "category": "communities",
-     "file": "content/shared/freedom.md",
+     "file": "content/niichaz/freedom.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     },
     {
      "id": "duty",
      "title": "Община «Долг»",
      "category": "communities",
-     "file": "content/shared/duty.md",
+     "file": "content/niichaz/duty.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     }
    ],
-   "map": [
-    {
-     "name": "МБУ «Янтарь»",
-     "x": 38,
-     "y": 52,
-     "type": "base"
-    },
-    {
-     "name": "МБУ «Икар»",
-     "x": 55,
-     "y": 66,
-     "type": "base"
-    },
-    {
-     "name": "Озеро Янтарь",
-     "x": 33,
-     "y": 47,
-     "type": "anomaly"
-    },
-    {
-     "name": "Радар",
-     "x": 48,
-     "y": 28,
-     "type": "danger"
-    },
-    {
-     "name": "Х-18, Тёмная долина",
-     "x": 62,
-     "y": 76,
-     "type": "lab"
-    },
-    {
-     "name": "Агропром",
-     "x": 44,
-     "y": 72,
-     "type": "lab"
-    }
-   ],
-   "journal": [
-    {
-     "title": "Стандартизация детектора «Медведь»",
-     "status": "active",
-     "text": "Подготовить конструкторскую документацию для серийного выпуска."
-    },
-    {
-     "title": "Полевые испытания ПЗ-3П «Диадема»",
-     "status": "active",
-     "text": "Провести испытания у пси-аномалий севернее Янтаря с сопровождением Варты."
-    },
-    {
-     "title": "Таблица аномальных полей",
-     "status": "active",
-     "text": "Заполнить таблицу известных аномальных полей фотографиями и свойствами."
-    },
-    {
-     "title": "Пси-блокатор: формула",
-     "status": "done",
-     "text": "Формула получена, доза ограничена 0,1 мг, эффект 5 минут."
-    }
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "NIICHAZ-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "shoc",
+    "theme": "science",
+    "rank": "Учёный",
+    "reputation": "Хорошая"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
    ]
   },
   {
@@ -340,6 +316,42 @@
      "meta": {}
     },
     {
+     "id": "anomalies",
+     "title": "Аномалии Болот",
+     "category": "research",
+     "file": "content/clear-sky/anomalies.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "artifacts",
+     "title": "Каталог артефактов",
+     "category": "research",
+     "file": "content/clear-sky/artifacts.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "fauna",
+     "title": "Фауна Болот",
+     "category": "research",
+     "file": "content/clear-sky/fauna.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Проводники базы",
+     "meta": {}
+    },
+    {
+     "id": "emission",
+     "title": "Природа выбросов",
+     "category": "research",
+     "file": "content/clear-sky/emission.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
      "id": "swamps",
      "title": "Отчёт: Болота",
      "category": "field",
@@ -358,24 +370,6 @@
      "meta": {}
     },
     {
-     "id": "emission",
-     "title": "Аномальный шторм «Выброс» (НИИЧАЗ)",
-     "category": "research",
-     "file": "content/niichaz/emission.md",
-     "org": "Получено от НИИЧАЗ по обмену данными",
-     "author": "Кирилл Бурнштейн Фридрихов",
-     "meta": {}
-    },
-    {
-     "id": "anomaly-fields",
-     "title": "Аномальные поля (НИИЧАЗ)",
-     "category": "research",
-     "file": "content/niichaz/anomaly-fields.md",
-     "org": "Получено от НИИЧАЗ по обмену данными",
-     "author": "Кирилл Бурнштейн Фридрихов",
-     "meta": {}
-    },
-    {
      "id": "personnel",
      "title": "Личный состав",
      "category": "staff",
@@ -385,54 +379,41 @@
      "meta": {}
     }
    ],
-   "map": [
-    {
-     "name": "База «Чистого Неба»",
-     "x": 18,
-     "y": 62,
-     "type": "base"
-    },
-    {
-     "name": "Вышка «Север-2»",
-     "x": 24,
-     "y": 44,
-     "type": "poi"
-    },
-    {
-     "name": "Церковь",
-     "x": 30,
-     "y": 70,
-     "type": "poi"
-    },
-    {
-     "name": "Лагерь ренегатов",
-     "x": 34,
-     "y": 56,
-     "type": "danger"
-    },
-    {
-     "name": "Затопленная ферма",
-     "x": 22,
-     "y": 80,
-     "type": "anomaly"
-    }
-   ],
-   "journal": [
-    {
-     "title": "Восстановить вышку «Север-2»",
-     "status": "done",
-     "text": "Вышка работает, журнал выбросов ведётся."
-    },
-    {
-     "title": "Обмен данными с НИИЧАЗ",
-     "status": "active",
-     "text": "Еженедельно передавать наблюдения в МБУ «Янтарь»."
-    },
-    {
-     "title": "Ренегаты у моста",
-     "status": "active",
-     "text": "Обезоружить группу, блокирующую тропу к церкви."
-    }
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "CLEAR-SKY-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "cs",
+    "theme": "standard",
+    "rank": "Опытный",
+    "reputation": "Хорошая"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
    ]
   },
   {
@@ -440,12 +421,12 @@
    "name": "ИИГ",
    "fullName": "Интернациональная Исследовательская Группа",
    "motto": "Scientia sine finibus — наука без границ",
-   "emblem": "assets/img/emblems/iig.svg",
+   "emblem": "assets/img/emblems/iig.png",
    "colors": {
-    "primary": "#2a8f9c",
-    "secondary": "#f3c64b",
-    "accent": "#7fd3dc",
-    "dark": "#0d2f35"
+    "primary": "#7a0019",
+    "secondary": "#e8b84a",
+    "accent": "#c8283c",
+    "dark": "#2a0008"
    },
    "location": "Миссия ИИГ, Кордон",
    "user": {
@@ -473,26 +454,53 @@
      "meta": {}
     },
     {
-     "id": "phenomena",
-     "title": "Феномены ЧАЗ (НИИЧАЗ)",
+     "id": "anomalies",
+     "title": "Klassifikation: аномальные поля",
      "category": "research",
-     "file": "content/niichaz/phenomena.md",
-     "org": "Получено от НИИЧАЗ по протоколу обмена",
-     "author": "Кирилл Бурнштейн Фридрихов",
+     "file": "content/iig/anomalies.md",
+     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "artifacts",
+     "title": "Каталог образцов",
+     "category": "research",
+     "file": "content/iig/artifacts.md",
+     "org": "Интернациональная Исследовательская Группа, лаборатория",
+     "author": "Dr. Weiss",
      "meta": {}
     },
     {
      "id": "psi",
-     "title": "Пси-излучение (НИИЧАЗ)",
+     "title": "Psi-Phänomene: обзор",
      "category": "research",
-     "file": "content/niichaz/psi.md",
-     "org": "Получено от НИИЧАЗ по протоколу обмена",
-     "author": "Кирилл Бурнштейн Фридрихов",
+     "file": "content/iig/psi.md",
+     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "fauna",
+     "title": "Mutanten: полевой справочник",
+     "category": "research",
+     "file": "content/iig/fauna.md",
+     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "labs",
+     "title": "Лаборатории серии X",
+     "category": "objects",
+     "file": "content/iig/labs.md",
+     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
+     "author": "Dr. Weiss",
      "meta": {}
     },
     {
      "id": "protocol",
-     "title": "Протокол обмена данными",
+     "title": "Протокол работы с данными",
      "category": "about",
      "file": "content/iig/protocol.md",
      "org": "Интернациональная Исследовательская Группа",
@@ -509,43 +517,41 @@
      "meta": {}
     }
    ],
-   "map": [
-    {
-     "name": "Миссия ИИГ",
-     "x": 48,
-     "y": 86,
-     "type": "base"
-    },
-    {
-     "name": "МБУ «Янтарь» (НИИЧАЗ)",
-     "x": 38,
-     "y": 52,
-     "type": "base"
-    },
-    {
-     "name": "Блокпост Варты",
-     "x": 56,
-     "y": 90,
-     "type": "poi"
-    },
-    {
-     "name": "Аномальное поле ГПАП-3",
-     "x": 62,
-     "y": 70,
-     "type": "anomaly"
-    }
-   ],
-   "journal": [
-    {
-     "title": "Проверка данных НИИЧАЗ",
-     "status": "active",
-     "text": "Сверить классификацию аномальных полей с собственными замерами."
-    },
-    {
-     "title": "Карибский архив",
-     "status": "active",
-     "text": "Запросить рассекреченные материалы Karibisches Resonanzexperiment."
-    }
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "IIG-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "s2",
+    "theme": "science",
+    "rank": "Эксперт",
+    "reputation": "Нейтральная"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
    ]
   },
   {
@@ -584,7 +590,7 @@
      "org": "Научно-оперативная исследовательская группа “Искра”",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
-      "Вдохновлено": "Профессором НИИЧАЗ Фидов С.П."
+      "Вдохновлено": "Профессором Фидов С.П."
      }
     },
     {
@@ -592,7 +598,7 @@
      "title": "Пси-заслон 1П «Прототип»",
      "category": "tech",
      "file": "content/iskra/pz-1p.md",
-     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты."
@@ -603,7 +609,7 @@
      "title": "Пси-заслон 2П «Спираль»",
      "category": "tech",
      "file": "content/iskra/pz-2p.md",
-     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
@@ -615,7 +621,7 @@
      "title": "Пси-заслон 3П «Диадема»",
      "category": "tech",
      "file": "content/iskra/pz-3p.md",
-     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
@@ -639,7 +645,7 @@
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
-      "Вдохновлено теориями и наблюдениями": "Профессора НИИЧАЗ Кирсанова А.Н."
+      "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
      }
     },
     {
@@ -650,7 +656,7 @@
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
-      "Вдохновлено теориями и наблюдениями": "Профессора НИИЧАЗ Кирсанова А.Н."
+      "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
      }
     },
     {
@@ -679,7 +685,7 @@
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
-      "Вдохновлено теориями": "Профессора НИИЧАЗ Миллера Д.Ф."
+      "Вдохновлено теориями": "Профессора Миллера Д.Ф."
      }
     },
     {
@@ -717,34 +723,34 @@
      "id": "monolith",
      "title": "Община «Монолит»",
      "category": "communities",
-     "file": "content/shared/monolith.md",
+     "file": "content/iskra/monolith.md",
      "org": "НОИГ «Искра»",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     },
     {
      "id": "freedom",
      "title": "Община «Свобода»",
      "category": "communities",
-     "file": "content/shared/freedom.md",
+     "file": "content/iskra/freedom.md",
      "org": "НОИГ «Искра»",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     },
     {
      "id": "duty",
      "title": "Община «Долг»",
      "category": "communities",
-     "file": "content/shared/duty.md",
+     "file": "content/iskra/duty.md",
      "org": "НОИГ «Искра»",
-     "author": "Справка составлена по открытым источникам",
+     "author": "Справочный отдел",
      "meta": {}
     },
     {
      "id": "monolith-unit",
      "title": "Пси-установка «Монолит»",
      "category": "objects",
-     "file": "content/shared/monolith-unit.md",
+     "file": "content/iskra/monolith-unit.md",
      "org": "НОИГ «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {}
@@ -753,7 +759,7 @@
      "id": "rainbow-1",
      "title": "«Радуга-1» (Выжигатель мозгов)",
      "category": "objects",
-     "file": "content/shared/rainbow-1.md",
+     "file": "content/iskra/rainbow-1.md",
      "org": "НОИГ «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {}
@@ -770,65 +776,41 @@
      "icon": "assets/img/emblems/disk-o1.png"
     }
    ],
-   "map": [
-    {
-     "name": "Лагерь «Искры»",
-     "x": 30,
-     "y": 40,
-     "type": "base"
-    },
-    {
-     "name": "Новосёлки (установка уничтожена)",
-     "x": 58,
-     "y": 18,
-     "type": "done"
-    },
-    {
-     "name": "Ретранслятор «Монолита»",
-     "x": 52,
-     "y": 34,
-     "type": "danger"
-    },
-    {
-     "name": "«Приют» (Полдень)",
-     "x": 70,
-     "y": 44,
-     "type": "poi"
-    },
-    {
-     "name": "Радар / «Радуга-1»",
-     "x": 46,
-     "y": 26,
-     "type": "danger"
-    },
-    {
-     "name": "Янтарь",
-     "x": 36,
-     "y": 58,
-     "type": "base"
-    }
-   ],
-   "journal": [
-    {
-     "title": "Найти «Предел»",
-     "status": "active",
-     "text": "По данным «Дискеты», субъект О-1 укрывается в «Пределе». Координаты смещаются каждые 1–2 секунды."
-    },
-    {
-     "title": "Артефакт «Сердце»",
-     "status": "active",
-     "text": "Проверить повреждённые ретрансляторы на наличие «Сердца»."
-    },
-    {
-     "title": "Уничтожить пси-установку «Монолит»",
-     "status": "done",
-     "text": "Выполнено совместно со «Свободой» и «Полднем» в Новосёлках."
-    },
-    {
-     "title": "«Барьер-М»: режим «Выжигание»",
-     "status": "failed",
-     "text": "Испытания приостановлены: перегрев после 2–3 импульсов."
-    }
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "ISKRA-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "s2",
+    "theme": "standard",
+    "rank": "Ветеран",
+    "reputation": "Отличная"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
    ]
   }
  ]

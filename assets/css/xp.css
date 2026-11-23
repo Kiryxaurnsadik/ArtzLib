@@ -36,6 +36,9 @@
     radial-gradient(120% 50% at 90% 115%, color-mix(in srgb, var(--f-primary) 40%, #3f8a2b) 50%, transparent 51%),
     linear-gradient(#2f6cd8, #8fbaf2 60%, #cfe2ff);
 }
+.xp-desktop.has-wall { background: var(--emblem) right 40px bottom 40px / 220px no-repeat, var(--wall) center / cover no-repeat, #000; }
+.xp-desktop.no-emblem { background-size: 0 0, auto, auto, auto; }
+.xp-desktop.has-wall.no-emblem { background: var(--wall) center / cover no-repeat, #000; }
 .xp-icons { position: absolute; top: 10px; left: 8px; bottom: 10px; display: flex; flex-direction: column; flex-wrap: wrap; gap: 6px; align-content: flex-start; z-index: 1; }
 .xp-icon { width: 84px; background: none; border: 1px solid transparent; padding: 4px 2px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; color: #fff; }
 .xp-icon img { width: 38px; height: 38px; filter: drop-shadow(1px 2px 1px #0007); }

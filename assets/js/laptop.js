@@ -18,13 +18,19 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       <div class="laptop-base"><div class="laptop-keys"></div><div class="laptop-pad"></div></div>
     </div>`;
   const screen = root.querySelector('[data-screen]');
+  const osName = faction.os?.laptopName || 'Окна Vista';
+  const avatar = faction.look?.avatar || faction.emblem;
+  const abs = (u) => (u ? new URL(u, location.href).href : '');
+  const wall = faction.look?.wallpaperLaptop;
+  const showEmb = faction.look?.emblemOnDesktop !== false;
+  const pass = faction.os?.laptopPassword || '';
   const groups = groupDocs(faction, data.factions.categories);
   const bootKey = `artz.boot.laptop.${faction.id}`;
   let booted = false;
   try { booted = sessionStorage.getItem(bootKey) === '1'; } catch { /* */ }
 
   function boot() {
-    screen.innerHTML = `<div class="vista-boot"><div class="vista-boot-bar"><i></i></div><div class="vista-boot-copy">© НПО «Агат» · Окна Vista</div></div>`;
+    screen.innerHTML = `<div class="vista-boot"><div class="vista-boot-bar"><i></i></div><div class="vista-boot-copy">© НПО «Агат» · ${esc(osName)}</div></div>`;
     setTimeout(login, 2200);
   }
 
@@ -32,16 +38,21 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
     screen.innerHTML = `
       <div class="vista-login">
         <div class="vista-login-tile">
-          <div class="vista-userpic"><img src="${faction.emblem}" alt=""></div>
+          <div class="vista-userpic"><img src="${avatar}" alt=""></div>
           <div class="vista-login-name">${esc(faction.user?.name || 'Оператор')}</div>
           <form class="vista-login-form"><input type="password" placeholder="Пароль" aria-label="Пароль"><button type="submit" aria-label="Войти">➜</button></form>
-          <div class="vista-login-hint">Подсказка: любой пароль</div>
+          <div class="vista-login-hint">${esc(faction.os?.laptopHint || (pass ? '' : 'Подсказка: любой пароль'))}</div>
         </div>
-        <div class="vista-login-brand">Окна Vista<sup>™</sup> · ${esc(faction.fullName)}</div>
+        <div class="vista-login-brand">${esc(osName)} · ${esc(faction.fullName)}</div>
       </div>`;
     const form = screen.querySelector('form');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (pass && form.querySelector('input').value !== pass) {
+        screen.querySelector('.vista-login-hint').textContent = 'Неверный пароль. Повторите попытку.';
+        form.querySelector('input').value = '';
+        return;
+      }
       screen.querySelector('.vista-login').classList.add('is-welcome');
       screen.querySelector('.vista-login-hint').textContent = 'Добро пожаловать';
       setTimeout(desktop, 900);
@@ -52,13 +63,13 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
   function desktop() {
     try { sessionStorage.setItem(bootKey, '1'); } catch { /* */ }
     screen.innerHTML = `
-      <div class="vista-desktop" style="--emblem:url('${new URL(faction.emblem, location.href).href}')">
+      <div class="vista-desktop ${wall ? 'has-wall' : ''} ${showEmb ? '' : 'no-emblem'}" style="--emblem:url('${abs(faction.emblem)}');${wall ? `--wall:url('${abs(wall)}')` : ''}">
         <div class="vista-icons"></div>
         <aside class="vista-sidebar">
           <div class="gadget g-clock"><div class="g-clock-face"><i class="h"></i><i class="m"></i><i class="s"></i></div><div class="g-cap">${esc(faction.location || 'ЧАЗ')}</div></div>
           <div class="gadget g-meter"><div class="g-title">Радиационный фон</div><div class="g-val" data-rad>0.18</div><div class="g-unit">мкЗв/ч</div><div class="g-bar"><i data-radbar></i></div></div>
           <div class="gadget g-meter g-psi"><div class="g-title">Пси-фон</div><div class="g-val" data-psi>12</div><div class="g-unit">усл. ед.</div><div class="g-bar"><i data-psibar></i></div></div>
-          <div class="gadget g-notes"><div class="g-title">Заметки</div><div class="g-note">${esc(faction.journal?.find((j) => j.status === 'active')?.title || faction.motto || '')}</div></div>
+          <div class="gadget g-notes"><div class="g-title">Заметки</div><div class="g-note">${esc(faction.look?.note || faction.motto || '')}</div></div>
         </aside>
         <div class="vista-windows"></div>
       </div>
@@ -74,7 +85,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
           <div class="vs-search"><input type="search" placeholder="Начать поиск" aria-label="Поиск документов"></div>
         </div>
         <div class="vs-right">
-          <div class="vs-pic"><img src="${faction.emblem}" alt=""></div>
+          <div class="vs-pic"><img src="${avatar}" alt=""></div>
           <b class="vs-user">${esc(faction.user?.name || 'Оператор')}</b>
           <ul class="vs-places"></ul>
           <div class="vs-power"><button type="button" data-act="lock" aria-label="Блокировать">🔒</button><button type="button" data-act="off" aria-label="Завершение работы">⏻</button></div>

@@ -5,6 +5,11 @@ import { groupDocs } from './store.js';
 import { esc } from './md.js';
 
 export function renderAgat(root, { faction, data, skipBoot }) {
+  const osName = faction.os?.agatName || 'Окна XP';
+  const avatar = faction.look?.avatar || faction.emblem;
+  const abs = (u) => (u ? new URL(u, location.href).href : '');
+  const wall = faction.look?.wallpaperAgat;
+  const showEmb = faction.look?.emblemOnDesktop !== false;
   root.innerHTML = `
     <div class="agat">
       <div class="agat-bezel">
@@ -34,12 +39,8 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     screen.innerHTML = `<pre class="bios"></pre>`;
     const pre = screen.firstElementChild;
     const lines = [
-      'АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»',
-      'Процессор: К1810ВМ86М  8 МГц',
-      'Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК',
-      'НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК',
-      'Сетевой адаптер ЧАЗ-NET ........ ОК',
-      `Терминал: ${faction.name.toUpperCase()} / ${faction.location || 'ЧАЗ'}`,
+      ...(faction.os?.bios?.length ? faction.os.bios : ['АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»']),
+      `Терминал: ${(faction.os?.computer || faction.name).toUpperCase()} / ${faction.location || 'ЧАЗ'}`,
       '',
       'Загрузка системы...',
     ];
@@ -58,7 +59,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     screen.innerHTML = `
       <div class="xp-splash">
         <img src="${faction.emblem}" alt="">
-        <div class="xp-splash-name">Окна <b>XP</b> <small>Профессиональная · ${esc(faction.name)}</small></div>
+        <div class="xp-splash-name">${esc(osName)} <small>${esc(faction.name)}</small></div>
         <div class="xp-splash-bar"><i></i><i></i><i></i></div>
         <div class="xp-splash-copy">© НПО «Агат», Терминальная редакция для ЧАЗ</div>
       </div>`;
@@ -76,7 +77,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
           </div>
           <div class="xp-welcome-users">
             <button type="button" class="xp-user">
-              <img src="${faction.emblem}" alt="">
+              <img src="${avatar}" alt="">
               <span><b>${esc(faction.user?.name || 'Оператор')}</b><small>${esc(faction.user?.role || '')}</small></span>
             </button>
           </div>
@@ -92,7 +93,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
   function desktop() {
     try { sessionStorage.setItem(bootKey, '1'); } catch { /* */ }
     screen.innerHTML = `
-      <div class="xp-desktop" style="--emblem:url('${new URL(faction.emblem, location.href).href}')">
+      <div class="xp-desktop ${wall ? 'has-wall' : ''} ${showEmb ? '' : 'no-emblem'}" style="--emblem:url('${abs(faction.emblem)}');${wall ? `--wall:url('${abs(wall)}')` : ''}">
         <div class="xp-icons"></div>
         <div class="xp-windows"></div>
       </div>
@@ -102,7 +103,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
         <div class="xp-tray"><span class="xp-tray-ico" title="Сеть ЧАЗ-NET">📶</span><time></time></div>
       </footer>
       <div class="xp-startmenu" hidden>
-        <div class="xp-sm-head"><img src="${faction.emblem}" alt=""><b>${esc(faction.user?.name || 'Оператор')}</b></div>
+        <div class="xp-sm-head"><img src="${avatar}" alt=""><b>${esc(faction.user?.name || 'Оператор')}</b></div>
         <div class="xp-sm-cols"><ul class="xp-sm-left"></ul><ul class="xp-sm-right"></ul></div>
         <div class="xp-sm-foot"><button type="button" data-act="logoff">Выход из системы</button><button type="button" data-act="off">Выключение</button></div>
       </div>`;
@@ -135,7 +136,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
       body.className = 'xp-explorer';
       body.innerHTML = `
         <div class="xp-ex-bar"><span>Файл</span><span>Правка</span><span>Вид</span><span>Избранное</span><span>Сервис</span><span>Справка</span></div>
-        <div class="xp-ex-addr">Адрес: <input readonly value="C:\\${faction.id.toUpperCase()}\\${esc(g.name)}"></div>
+        <div class="xp-ex-addr">Адрес: <input readonly value="C:\\${esc((faction.os?.computer || faction.id).toUpperCase())}\\${esc(g.name)}"></div>
         <div class="xp-ex-main">
           <aside class="xp-ex-side"><div class="xp-ex-panel"><h4>Задачи для файлов</h4><p>Документов: ${g.docs.length}</p></div><div class="xp-ex-panel"><h4>Другие места</h4><p>${esc(faction.fullName)}</p></div></aside>
           <div class="xp-ex-files"></div>
