@@ -317,42 +317,6 @@
      "meta": {}
     },
     {
-     "id": "anomalies",
-     "title": "Аномалии Болот",
-     "category": "research",
-     "file": "content/clear-sky/anomalies.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
-    },
-    {
-     "id": "artifacts",
-     "title": "Каталог артефактов",
-     "category": "research",
-     "file": "content/clear-sky/artifacts.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
-    },
-    {
-     "id": "fauna",
-     "title": "Фауна Болот",
-     "category": "research",
-     "file": "content/clear-sky/fauna.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Проводники базы",
-     "meta": {}
-    },
-    {
-     "id": "emission",
-     "title": "Природа выбросов",
-     "category": "research",
-     "file": "content/clear-sky/emission.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
-    },
-    {
      "id": "swamps",
      "title": "Отчёт: Болота",
      "category": "field",
@@ -451,51 +415,6 @@
      "category": "research",
      "file": "content/iig/caribbean.md",
      "org": "ИИГ, отдел анализа данных",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "anomalies",
-     "title": "Klassifikation: аномальные поля",
-     "category": "research",
-     "file": "content/iig/anomalies.md",
-     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "artifacts",
-     "title": "Каталог образцов",
-     "category": "research",
-     "file": "content/iig/artifacts.md",
-     "org": "Интернациональная Исследовательская Группа, лаборатория",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "psi",
-     "title": "Psi-Phänomene: обзор",
-     "category": "research",
-     "file": "content/iig/psi.md",
-     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "fauna",
-     "title": "Mutanten: полевой справочник",
-     "category": "research",
-     "file": "content/iig/fauna.md",
-     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "labs",
-     "title": "Лаборатории серии X",
-     "category": "objects",
-     "file": "content/iig/labs.md",
-     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
      "author": "Dr. Weiss",
      "meta": {}
     },
