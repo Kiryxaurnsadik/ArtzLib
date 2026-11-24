@@ -13,7 +13,7 @@ STALKER RP - Artz RolePlay
 
 Сайт статический, сборка не нужна.
 
-- **GitHub Pages**: Settings → Pages → Deploy from a branch → `main` / `(root)`. Сайт будет по адресу `https://<логин>.github.io/ArtzLib/`.
+- **GitHub Pages**: Settings → Pages → Deploy from a branch → `main` / `(root)`. Сайт уже открыт по адресу https://kiryxaurnsadik.github.io/ArtzLib/.
 - **Локально**: `python3 -m http.server 8000` в папке репозитория, затем открыть http://localhost:8000. Если открыть `index.html` двойным щелчком, сайт не заработает: браузер не даёт читать JSON с диска.
 
 Адреса страниц:
@@ -23,6 +23,19 @@ STALKER RP - Artz RolePlay
 - `#/`: заглушка «Терминал не выбран». Список всех группировок можно включить в админке.
 - Устройства: `agat`, `laptop`, `pda-s2`, `pda-shoc`, `pda-cs`, `pda-cop`.
 - Если у группировки задан ключ доступа, к ссылке добавляется `?k=ключ`. Готовые ссылки есть в админке во вкладке «Ссылки».
+
+## Готовые ссылки
+
+Сайт: https://kiryxaurnsadik.github.io/ArtzLib/. Ссылки ниже работают, пока у группировки не задан ключ доступа. Если ключ задан, к ссылке добавляется `?k=ключ`, а точные ссылки с ключом есть в админке во вкладке «Ссылки».
+
+Админка: https://kiryxaurnsadik.github.io/ArtzLib/admin.html
+
+| Группировка | Все устройства | Агат 5189 | Ноутбук | КПК STALKER 2 | КПК ТЧ | КПК ЧН | КПК ЗП |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| НИИЧАЗ | [открыть](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/agat) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/laptop) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-s2) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-shoc) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-cs) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-cop) |
+| Чистое Небо | [открыть](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/agat) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/laptop) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/pda-s2) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/pda-shoc) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/pda-cs) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/clear-sky/pda-cop) |
+| ИИГ | [открыть](https://kiryxaurnsadik.github.io/ArtzLib/#/iig) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/agat) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/laptop) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/pda-s2) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/pda-shoc) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/pda-cs) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iig/pda-cop) |
+| Искра | [открыть](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/agat) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/laptop) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/pda-s2) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/pda-shoc) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/pda-cs) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/iskra/pda-cop) |
 
 На каждом устройстве есть кнопка полноэкранного режима (в углу): остаётся только экран, без корпуса. На телефоне корпус скрывается сам.
 

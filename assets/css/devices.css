@@ -73,6 +73,7 @@ body.on-device #app { display: flex; flex-direction: column; height: 100%; }
 .pda-screen { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
 .pda-fx { position: absolute; inset: 0; pointer-events: none; z-index: 40; }
 .pda-side { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 18px; align-items: center; z-index: 5; }
+.pda-hw svg { width: 22px; height: 22px; display: block; margin: auto; }
 .pda-hw { width: 56px; height: 40px; border-radius: 8px; border: 0; cursor: pointer; font: 700 13px Oswald, sans-serif; letter-spacing: .05em; }
 .pda-hw-round { width: 48px; height: 48px; border-radius: 50%; }
 .pda-label { position: absolute; left: 60px; bottom: 14px; font: 600 12px Oswald, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
