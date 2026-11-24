@@ -145,6 +145,11 @@ body.on-device #app { display: flex; flex-direction: column; height: 100%; }
 /* Полноэкранный режим: только экран, без корпуса */
 .fs-btn { position: absolute; top: calc(8px + env(safe-area-inset-top, 0px)); right: calc(8px + env(safe-area-inset-right, 0px)); z-index: 80; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 6px; border: 1px solid #ffffff30; background: #000a; color: #fff; cursor: pointer; opacity: .45; transition: opacity .2s; }
 .fs-btn:hover, .fs-btn:focus-visible { opacity: 1; }
+.lang-btn { position: absolute; top: calc(8px + env(safe-area-inset-top, 0px)); right: calc(50px + env(safe-area-inset-right, 0px)); z-index: 80; height: 36px; min-width: 36px; padding: 0 6px; border-radius: 6px; border: 1px solid #ffffff30; background: #000a; color: #fff; font: 600 12px/1 'PT Sans Narrow', sans-serif; letter-spacing: .06em; cursor: pointer; opacity: .45; transition: opacity .2s; }
+.lang-btn:hover, .lang-btn:focus-visible { opacity: 1; }
+.stage.is-bare:not(.is-full) .lang-btn { display: none; }
+.stage.is-full .lang-btn { top: calc(50% + 22px); right: calc(4px + env(safe-area-inset-right, 0px)); height: 28px; min-width: 28px; padding: 0 3px; font-size: 10px; opacity: .25; }
+.stage.is-full .lang-btn:hover { opacity: 1; }
 .fs-btn svg { width: 20px; height: 20px; }
 .stage.is-full .fs-btn { opacity: .25; }
 .stage.is-full .fs-btn:hover { opacity: 1; }

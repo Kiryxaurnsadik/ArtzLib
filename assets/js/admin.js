@@ -681,8 +681,15 @@ function publish(main) {
     persist();
     btn.disabled = true;
     try {
+      // Защита от перезаписи: если сайт обновили после открытия админки
+      // (другой публикацией или правкой в репозитории), не затираем его.
+      log.textContent = 'Проверка версии на сайте...';
+      const remoteRev = await remoteFactionsRev(v);
+      if (remoteRev !== null && remoteRev !== (model.baseRev ?? pub.factions.rev ?? 0)) {
+        throw new Error(`на сайте уже более новая версия (${remoteRev}), а черновик сделан от версии ${model.baseRev ?? '?'}. Обновите страницу админки и повторите изменения, иначе удалённые или новые документы на сайте будут затёрты.`);
+      }
       const out = clone(model);
-      out.factions.rev = (pub.factions.rev || 0) + 1;
+      out.factions.rev = Math.max(pub.factions.rev || 0, remoteRev || 0) + 1;
       out.baseRev = out.factions.rev;
       const say = (t) => { log.textContent = t; };
       await externalize(v, out, say);
@@ -775,6 +782,15 @@ async function externalize(cfg, out, say) {
       }
     }
   }
+}
+
+async function remoteFactionsRev({ owner, repo, branch, token }) {
+  const api = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/data/factions.json?ref=${encodeURIComponent(branch)}`;
+  const r = await fetch(api, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.raw+json' }, cache: 'no-store' });
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error(`не удалось прочитать data/factions.json (${r.status})`);
+  const j = await r.json();
+  return j.rev || 0;
 }
 
 async function putFile({ owner, repo, branch, token }, path, content, message, b64 = null, skipIfExists = false) {
