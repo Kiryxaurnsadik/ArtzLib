@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 2,
+ "rev": 3,
  "categories": {
   "about": "О группировке",
   "tech": "Разработки технологий",
@@ -265,10 +265,10 @@
     "laptopHint": ""
    },
    "pda": {
-    "skin": "shoc",
     "theme": "science",
     "rank": "Учёный",
-    "reputation": "Хорошая"
+    "reputation": "Хорошая",
+    "skin": "shoc"
    },
    "devices": [
     "agat",
@@ -403,10 +403,10 @@
     "laptopHint": ""
    },
    "pda": {
-    "skin": "cs",
     "theme": "standard",
     "rank": "Опытный",
-    "reputation": "Хорошая"
+    "reputation": "Хорошая",
+    "skin": "cs"
    },
    "devices": [
     "agat",
@@ -541,10 +541,10 @@
     "laptopHint": ""
    },
    "pda": {
-    "skin": "s2",
     "theme": "science",
     "rank": "Эксперт",
-    "reputation": "Нейтральная"
+    "reputation": "Нейтральная",
+    "skin": "s2"
    },
    "devices": [
     "agat",
@@ -800,10 +800,10 @@
     "laptopHint": ""
    },
    "pda": {
-    "skin": "s2",
     "theme": "standard",
     "rank": "Ветеран",
-    "reputation": "Отличная"
+    "reputation": "Отличная",
+    "skin": "s2"
    },
    "devices": [
     "agat",
