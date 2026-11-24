@@ -36,10 +36,9 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
           <div class="pda-fx" aria-hidden="true"></div>
         </div>
         <div class="pda-side">
-          <button type="button" class="pda-hw" data-hw="home" title="К списку">${PDA_SKINS[skin]?.short || ''}</button>
+          <button type="button" class="pda-hw" data-hw="home" title="К списку" aria-label="К списку"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5M6.5 10v9h4v-5h3v5h4v-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
           <button type="button" class="pda-hw pda-hw-round" aria-label="Назад" data-hw="back"></button>
         </div>
-        <div class="pda-label">${skin === 's2' ? 'КПК · ' + esc(faction.name) : 'КПК «Сталкер»'}</div>
       </div>
     </div>`;
   const screen = root.querySelector('[data-screen]');
@@ -143,7 +142,7 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
   // ---------- классика: ТЧ, ЧН, ЗП ----------
   function classic() {
     const tabs = [['enc', 'Энциклопедия'], ['info', skin === 'cs' ? 'Личное дело' : 'Сведения']];
-    const title = { shoc: 'КПК', cs: 'КПК · сеть «Чистого неба»', cop: 'КПК' }[skin];
+    const title = skin === 'cs' ? 'КПК · локальная сеть' : 'КПК';
     screen.innerHTML = `
       <div class="cl cl-${skin}">
         <div class="cl-top"><span>${esc(title)} · ${esc(faction.location || 'Зона')}</span><time></time></div>
