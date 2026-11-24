@@ -4,6 +4,7 @@
 import { renderDocInto, docIcon, clock } from './views.js';
 import { groupDocs } from './store.js';
 import { esc } from './md.js';
+import { t } from './i18n.js';
 
 export const PDA_SKINS = {
   s2: { name: 'КПК · STALKER 2', short: 'S2' },
@@ -36,8 +37,8 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
           <div class="pda-fx" aria-hidden="true"></div>
         </div>
         <div class="pda-side">
-          <button type="button" class="pda-hw" data-hw="home" title="К списку" aria-label="К списку"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5M6.5 10v9h4v-5h3v5h4v-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
-          <button type="button" class="pda-hw pda-hw-round" aria-label="Назад" data-hw="back"></button>
+          <button type="button" class="pda-hw" data-hw="home" title="${t('К списку')}" aria-label="${t('К списку')}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5M6.5 10v9h4v-5h3v5h4v-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="pda-hw pda-hw-round" aria-label="${t('Назад')}" data-hw="back"></button>
         </div>
       </div>
     </div>`;
@@ -53,12 +54,12 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
         <h2 class="${cls}-h">${esc(faction.fullName || faction.name)}</h2>
         <div class="${cls}-sub">${esc(faction.motto || '')}</div>
         <dl>
-          <dt>Владелец</dt><dd>${esc(faction.user?.name || '')}</dd>
-          <dt>Должность</dt><dd>${esc(faction.user?.role || '')}</dd>
-          ${faction.pda?.rank ? `<dt>Ранг</dt><dd>${esc(faction.pda.rank)}</dd>` : ''}
-          ${faction.pda?.reputation ? `<dt>Репутация</dt><dd>${esc(faction.pda.reputation)}</dd>` : ''}
-          <dt>Местоположение</dt><dd>${esc(faction.location || '')}</dd>
-          <dt>Записей</dt><dd>${docs.length}</dd>
+          <dt>${t('Владелец')}</dt><dd>${esc(faction.user?.name || '')}</dd>
+          <dt>${t('Должность')}</dt><dd>${esc(faction.user?.role || '')}</dd>
+          ${faction.pda?.rank ? `<dt>${t('Ранг')}</dt><dd>${esc(faction.pda.rank)}</dd>` : ''}
+          ${faction.pda?.reputation ? `<dt>${t('Репутация')}</dt><dd>${esc(faction.pda.reputation)}</dd>` : ''}
+          <dt>${t('Местоположение')}</dt><dd>${esc(faction.location || '')}</dd>
+          <dt>${t('Записей')}</dt><dd>${docs.length}</dd>
         </dl>
       </div>
       <img class="${cls}-info-emb" src="${faction.emblem}" alt="">
@@ -66,13 +67,13 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
 
   // ---------- STALKER 2 ----------
   function s2() {
-    const tabs = [['notes', 'Заметки'], ['info', 'Сведения']];
+    const tabs = [['notes', t('Заметки')], ['info', t('Сведения')]];
     screen.innerHTML = `
       <div class="s2" data-theme="${esc(theme)}">
-        <div class="s2-status"><span class="s2-sig">▂▃▅▇</span><span>${esc(faction.location || 'Зона')}</span><span class="s2-deco"></span><time></time></div>
+        <div class="s2-status"><span class="s2-sig">▂▃▅▇</span><span>${esc(faction.location || t('Зона'))}</span><span class="s2-deco"></span><time></time></div>
         <nav class="s2-tabs"><span class="s2-arrow" aria-hidden="true">‹</span>${tabs.map(([id, n]) => `<button type="button" data-tab="${id}">${n}</button>`).join('')}<span class="s2-arrow" aria-hidden="true">›</span></nav>
         <div class="s2-body"></div>
-        <div class="s2-foot"><button type="button" class="s2-back"><span class="s2-back-ico" aria-hidden="true">↩</span> Назад</button><span class="s2-owner">${esc(faction.user?.name || '')}</span></div>
+        <div class="s2-foot"><button type="button" class="s2-back"><span class="s2-back-ico" aria-hidden="true">↩</span> ${t('Назад')}</button><span class="s2-owner">${esc(faction.user?.name || '')}</span></div>
       </div>`;
     clock(screen.querySelector('.s2-status time'));
     screen.querySelector('.s2-back').addEventListener('click', back);
@@ -81,7 +82,7 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
     const open = (id) => {
       btns.forEach((b) => b.classList.toggle('is-cur', b.dataset.tab === id));
       if (id === 'notes') {
-        listView(body, docs.map((d) => ({ id: d.id, title: d.title, sub: d.kind === 'chat' ? 'Носитель данных' : '', img: d.kind === 'chat' || d.icon ? docIcon(d) : '', ico: d.category, cat: d.category, render: (el) => noteView(el, d) })));
+        listView(body, docs.map((d) => ({ id: d.id, title: d.title, sub: d.kind === 'chat' ? t('Носитель данных') : '', img: d.kind === 'chat' || d.icon ? docIcon(d) : '', ico: d.category, cat: d.category, render: (el) => noteView(el, d) })));
       } else {
         body.innerHTML = infoHTML('s2');
       }
@@ -92,7 +93,7 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
         renderDocInto(el.querySelector('.s2-chat'), d, faction);
         return;
       }
-      el.innerHTML = `<h2 class="s2-h">${esc(d.title)}</h2><div class="s2-sub">Найдено: ${esc(d.org || faction.fullName)}</div><div class="s2-note"><div class="s2-note-text"></div><figure class="s2-photo"><figcaption>File_Photo.gsc</figcaption><img src="${d.cover || faction.emblem}" alt=""></figure></div>`;
+      el.innerHTML = `<h2 class="s2-h">${esc(d.title)}</h2><div class="s2-sub">${t('Найдено')}: ${esc(d.org || faction.fullName)}</div><div class="s2-note"><div class="s2-note-text"></div><figure class="s2-photo"><figcaption>File_Photo.gsc</figcaption><img src="${d.cover || faction.emblem}" alt=""></figure></div>`;
       renderDocInto(el.querySelector('.s2-note-text'), d, faction, { header: false }).then(() => {
         const first = el.querySelector('.s2-note-text img.md-img');
         if (first && !d.cover) el.querySelector('.s2-photo img').src = first.getAttribute('src');
@@ -103,8 +104,8 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
       target.innerHTML = `
         <div class="s2-split">
           <aside class="s2-list">
-            ${cats.length > 1 ? `<div class="s2-filters"><button type="button" class="is-cur" data-f="" title="Все записи">☰</button>${cats.map((c) => `<button type="button" data-f="${esc(c)}" title="${esc(data.factions.categories?.[c] || c)}">${catGlyph(c)}</button>`).join('')}</div>` : ''}
-            <div class="s2-cat-name">Все записи</div>
+            ${cats.length > 1 ? `<div class="s2-filters"><button type="button" class="is-cur" data-f="" title="${t('Все записи')}">☰</button>${cats.map((c) => `<button type="button" data-f="${esc(c)}" title="${esc(data.factions.categories?.[c] || c)}">${catGlyph(c)}</button>`).join('')}</div>` : ''}
+            <div class="s2-cat-name">${t('Все записи')}</div>
             <ul></ul>
           </aside>
           <section class="s2-detail"></section>
@@ -114,7 +115,7 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
       const catName = target.querySelector('.s2-cat-name');
       const fill = (f) => {
         ul.innerHTML = '';
-        catName.textContent = f ? (data.factions.categories?.[f] || f) : 'Все записи';
+        catName.textContent = f ? (data.factions.categories?.[f] || f) : t('Все записи');
         items.filter((i) => !f || i.cat === f).forEach((it, idx) => {
           const li = document.createElement('li');
           li.innerHTML = `<button type="button">${it.img ? `<img src="${it.img}" alt="">` : `<span class="s2-ico">${catGlyph(it.ico)}</span>`}<span class="s2-li-t">${esc(it.title)}${it.sub ? `<small>${esc(it.sub)}</small>` : ''}</span></button>`;
@@ -141,11 +142,11 @@ export function renderPDA(root, { faction, data, skin = 's2' }) {
 
   // ---------- классика: ТЧ, ЧН, ЗП ----------
   function classic() {
-    const tabs = [['enc', 'Энциклопедия'], ['info', skin === 'cs' ? 'Личное дело' : 'Сведения']];
-    const title = skin === 'cs' ? 'КПК · локальная сеть' : 'КПК';
+    const tabs = [['enc', t('Энциклопедия')], ['info', skin === 'cs' ? t('Личное дело') : t('Сведения')]];
+    const title = skin === 'cs' ? `${t('КПК')} · ${t('локальная сеть')}` : t('КПК');
     screen.innerHTML = `
       <div class="cl cl-${skin}">
-        <div class="cl-top"><span>${esc(title)} · ${esc(faction.location || 'Зона')}</span><time></time></div>
+        <div class="cl-top"><span>${esc(title)} · ${esc(faction.location || t('Зона'))}</span><time></time></div>
         <div class="cl-main">
           <nav class="cl-tabs">${tabs.map(([id, n]) => `<button type="button" data-tab="${id}">${n}</button>`).join('')}</nav>
           <div class="cl-body"></div>

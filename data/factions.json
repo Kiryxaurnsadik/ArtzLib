@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 5,
  "categories": {
   "about": "О группировке",
   "tech": "Разработки технологий",
@@ -39,7 +39,19 @@
      "file": "content/niichaz/about.md",
      "org": "НИИЧАЗ",
      "author": "Канцелярия института",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "About NIIChAZ",
+       "org": "NIIChAZ",
+       "author": "Institute office"
+      },
+      "de": {
+       "title": "Über das NIIChAZ",
+       "org": "NIIChAZ",
+       "author": "Kanzlei des Instituts"
+      }
+     }
     },
     {
      "id": "medved",
@@ -50,6 +62,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Поиск ранее не классифицированных и нестабильных типов артефактов, находящихся на докритической стадии формирования. Способность работать в режиме расширенного спектрального сканирования, фиксируя отклонения в электромагнитных, акустических и радиационных полях."
+     },
+     "i18n": {
+      "en": {
+       "title": "Medved detector",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Detection of previously unclassified and unstable artifact types at the pre-critical stage of formation. Can operate in extended spectral scanning mode, registering deviations in electromagnetic, acoustic and radiation fields."
+       }
+      },
+      "de": {
+       "title": "Detektor „Medwed“",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Aufspüren bisher nicht klassifizierter und instabiler Artefakttypen im vorkritischen Bildungsstadium. Arbeitet im erweiterten Spektralscan-Modus und erfasst Abweichungen in elektromagnetischen, akustischen und Strahlungsfeldern."
+       }
+      }
      }
     },
     {
@@ -61,6 +91,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Безопасное хранение и транспортировка аномальных образований повышенной нестабильности."
+     },
+     "i18n": {
+      "en": {
+       "title": "KDA-7 container",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Safe storage and transport of highly unstable anomalous formations."
+       }
+      },
+      "de": {
+       "title": "Behälter KDA-7",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Sichere Lagerung und Beförderung hochgradig instabiler anomaler Gebilde."
+       }
+      }
      }
     },
     {
@@ -72,6 +120,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальная носимая платформа аномальных образований."
+     },
+     "i18n": {
+      "en": {
+       "title": "SKA-1 special belt",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual wearable platform for anomalous formations."
+       }
+      },
+      "de": {
+       "title": "Spezialgurt SKA-1",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelle tragbare Plattform für anomale Gebilde."
+       }
+      }
      }
     },
     {
@@ -83,6 +149,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты."
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 1P \"Prototype\"",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection."
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 1P „Prototyp“",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz."
+       }
+      }
      }
     },
     {
@@ -95,6 +179,26 @@
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
       "Происхождение": "модернизация пси-шлема первого поколения и раннего прототипа."
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 2P \"Spiral\"",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection.",
+        "Origin": "an upgrade of the first-generation psi helmet and the early prototype."
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 2P „Spirale“",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz.",
+        "Herkunft": "Modernisierung des Psi-Helms der ersten Generation und des frühen Prototyps."
+       }
+      }
      }
     },
     {
@@ -107,6 +211,26 @@
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
       "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия, улучшение защитного пси-заслона с помощью новой системы отражения в"
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 3P \"Diadem\"",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection.",
+        "Origin": "an upgrade of the second-generation psi helmet, introducing new technologies and properties, research into germanium-based psi-absorbing alloys, and an improved protective psi screen with a new reflection system"
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 3P „Diadem“",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz.",
+        "Herkunft": "Modernisierung des Psi-Helms der zweiten Generation mit neuen Technologien und Eigenschaften, Forschung an psi-absorbierenden Legierungen auf Germaniumbasis und verbessertem Psi-Schirm mit einem neuen Reflexionssystem"
+       }
+      }
      }
     },
     {
@@ -119,6 +243,26 @@
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
       "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия."
+     },
+     "i18n": {
+      "en": {
+       "title": "Psimophone 3P",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection.",
+        "Origin": "an upgrade of the second-generation psi helmet, introducing new technologies and properties and research into germanium-based psi-absorbing alloys."
+       }
+      },
+      "de": {
+       "title": "Psimophon 3P",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz.",
+        "Herkunft": "Modernisierung des Psi-Helms der zweiten Generation mit neuen Technologien und Eigenschaften sowie Forschung an psi-absorbierenden Legierungen auf Germaniumbasis."
+       }
+      }
      }
     },
     {
@@ -131,6 +275,26 @@
      "meta": {
       "Назначение": "экстренные хирургические вмешательства в полевых и аномальных условиях",
       "Минимальный ресурс повторного применения": "не менее 4 циклов"
+     },
+     "i18n": {
+      "en": {
+       "title": "SM-PKhU-01 field surgical kit (PKhN-2)",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "emergency surgery in field and anomalous conditions",
+        "Minimum reuse life": "at least 4 cycles"
+       }
+      },
+      "de": {
+       "title": "Chirurgisches Feldbesteck SM-PChU-01 (PChN-2)",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "chirurgische Notfalleingriffe unter Feld- und Anomaliebedingungen",
+        "Mindestanzahl an Wiederverwendungen": "mindestens 4 Zyklen"
+       }
+      }
      }
     },
     {
@@ -143,6 +307,26 @@
      "meta": {
       "Назначение": "Временная защита био-поля человека от негативного пси-воздействия",
       "Время эффекта препарата": "5 минут"
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi blocker (VZBP-ANTIPSI)",
+       "org": "Yantar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Temporary protection of the human biofield against harmful psi exposure",
+        "Duration of effect": "5 minutes"
+       }
+      },
+      "de": {
+       "title": "Psi-Blocker (WSBP-ANTIPSI)",
+       "org": "Forschungsbunker „Jantar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Vorübergehender Schutz des menschlichen Biofelds vor schädlicher Psi-Einwirkung",
+        "Wirkungsdauer": "5 Minuten"
+       }
+      }
      }
     },
     {
@@ -152,7 +336,17 @@
      "file": "content/niichaz/phenomena.md",
      "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
      "author": "",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Phenomena of the CAZ",
+       "org": "Ikar Research Bunker, NIIChAZ"
+      },
+      "de": {
+       "title": "Phänomene der CAZ",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ"
+      }
+     }
     },
     {
      "id": "anomaly-fields",
@@ -163,6 +357,24 @@
      "author": "Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено теориями и наблюдениями": "Профессора НИИЧАЗ Кирсанова А.Н."
+     },
+     "i18n": {
+      "en": {
+       "title": "Anomalous fields",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by the theories and observations of": "NIIChAZ Professor A. N. Kirsanov"
+       }
+      },
+      "de": {
+       "title": "Anomale Felder",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von den Theorien und Beobachtungen von": "NIIChAZ-Professor A. N. Kirsanow"
+       }
+      }
      }
     },
     {
@@ -174,6 +386,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Вдохновлено теориями": "Профессора Кирсанова А.Н."
+     },
+     "i18n": {
+      "en": {
+       "title": "Anomalous formations",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Inspired by the theories of": "Professor A. N. Kirsanov"
+       }
+      },
+      "de": {
+       "title": "Anomale Gebilde",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Inspiriert von den Theorien von": "Professor A. N. Kirsanow"
+       }
+      }
      }
     },
     {
@@ -183,7 +413,19 @@
      "file": "content/niichaz/fauna.md",
      "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
      "author": "Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Anomalous fauna",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "Anomale Fauna",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "psi",
@@ -192,7 +434,19 @@
      "file": "content/niichaz/psi.md",
      "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
      "author": "Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Psi radiation",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "Psi-Strahlung",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "emission",
@@ -203,6 +457,24 @@
      "author": "Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено теориями": "Профессора НИИЧАЗ Миллера Д.Ф."
+     },
+     "i18n": {
+      "en": {
+       "title": "The \"Emission\" anomalous storm",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by the theories of": "NIIChAZ Professor D. F. Miller"
+       }
+      },
+      "de": {
+       "title": "Der anomale Sturm „Emission“",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von den Theorien von": "NIIChAZ-Professor D. F. Miller"
+       }
+      }
      }
     },
     {
@@ -212,7 +484,17 @@
      "file": "content/niichaz/project-x.md",
      "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
      "author": "",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Project \"X\"",
+       "org": "Ikar Research Bunker, NIIChAZ"
+      },
+      "de": {
+       "title": "Projekt „X“",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ"
+      }
+     }
     },
     {
      "id": "monolith",
@@ -221,7 +503,19 @@
      "file": "content/niichaz/monolith.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Monolith community",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Monolith“",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Auskunftsabteilung"
+      }
+     }
     },
     {
      "id": "freedom",
@@ -230,7 +524,19 @@
      "file": "content/niichaz/freedom.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Freedom community",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Freiheit“",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Auskunftsabteilung"
+      }
+     }
     },
     {
      "id": "duty",
@@ -239,7 +545,19 @@
      "file": "content/niichaz/duty.md",
      "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Duty community",
+       "org": "Ikar Research Bunker, NIIChAZ",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Pflicht“",
+       "org": "Forschungsbunker „Ikar“, NIIChAZ",
+       "author": "Auskunftsabteilung"
+      }
+     }
     }
    ],
    "key": "",
@@ -277,7 +595,59 @@
     "pda-shoc",
     "pda-cs",
     "pda-cop"
-   ]
+   ],
+   "i18n": {
+    "en": {
+     "name": "NIIChAZ",
+     "fullName": "Research Institute of the Chernobyl Anomalous Zone",
+     "motto": "Wissen schützt: knowledge protects",
+     "location": "Yantar, MBU Yantar",
+     "user": {
+      "name": "Associate Professor Burnstein K. F.",
+      "role": "Senior researcher, MBU Yantar"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "CPU: K1810VM86M  8 MHz",
+       "Memory test: 640K OK   Extended: 523264K OK",
+       "HDD 0: \"ES-5067\" 40 GB ........ OK",
+       "Network adapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Scientist",
+      "reputation": "Good"
+     }
+    },
+    "de": {
+     "name": "NIIChAZ",
+     "fullName": "Forschungsinstitut der Anomalen Zone von Tschernobyl",
+     "motto": "Wissen schützt",
+     "location": "Jantar, MBU „Jantar“",
+     "user": {
+      "name": "Dozent Burnstein K. F.",
+      "role": "Leitender wissenschaftlicher Mitarbeiter, MBU „Jantar“"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "Prozessor: K1810WM86M  8 MHz",
+       "Speichertest: 640K OK   Erweitert: 523264K OK",
+       "Festplatte 0: „ES-5067“ 40 GB ........ OK",
+       "Netzwerkadapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Wissenschaftler",
+      "reputation": "Gut"
+     }
+    }
+   }
   },
   {
    "id": "clear-sky",
@@ -305,7 +675,19 @@
      "file": "content/clear-sky/about.md",
      "org": "База «Чистого Неба», Болота",
      "author": "Совет базы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "About Clear Sky",
+       "org": "Clear Sky base, Swamps",
+       "author": "Base council"
+      },
+      "de": {
+       "title": "Über „Klarer Himmel“",
+       "org": "Basis von „Klarer Himmel“, Sümpfe",
+       "author": "Rat der Basis"
+      }
+     }
     },
     {
      "id": "charter",
@@ -314,43 +696,19 @@
      "file": "content/clear-sky/charter.md",
      "org": "База «Чистого Неба», Болота",
      "author": "Совет базы",
-     "meta": {}
-    },
-    {
-     "id": "anomalies",
-     "title": "Аномалии Болот",
-     "category": "research",
-     "file": "content/clear-sky/anomalies.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
-    },
-    {
-     "id": "artifacts",
-     "title": "Каталог артефактов",
-     "category": "research",
-     "file": "content/clear-sky/artifacts.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
-    },
-    {
-     "id": "fauna",
-     "title": "Фауна Болот",
-     "category": "research",
-     "file": "content/clear-sky/fauna.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Проводники базы",
-     "meta": {}
-    },
-    {
-     "id": "emission",
-     "title": "Природа выбросов",
-     "category": "research",
-     "file": "content/clear-sky/emission.md",
-     "org": "Лаборатория базы «Чистого Неба», Болота",
-     "author": "Лаборатория базы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Faction charter",
+       "org": "Clear Sky base, Swamps",
+       "author": "Base council"
+      },
+      "de": {
+       "title": "Satzung der Gruppierung",
+       "org": "Basis von „Klarer Himmel“, Sümpfe",
+       "author": "Rat der Basis"
+      }
+     }
     },
     {
      "id": "swamps",
@@ -359,7 +717,19 @@
      "file": "content/clear-sky/swamps.md",
      "org": "База «Чистого Неба», Болота",
      "author": "Проводники базы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Report: the Swamps",
+       "org": "Clear Sky base, Swamps",
+       "author": "Base guides"
+      },
+      "de": {
+       "title": "Bericht: die Sümpfe",
+       "org": "Basis von „Klarer Himmel“, Sümpfe",
+       "author": "Führer der Basis"
+      }
+     }
     },
     {
      "id": "emission-log",
@@ -368,7 +738,19 @@
      "file": "content/clear-sky/emission-log.md",
      "org": "Вышка «Север-2»",
      "author": "Лаборатория базы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Emission observation log",
+       "org": "Sever-2 watchtower",
+       "author": "Base laboratory"
+      },
+      "de": {
+       "title": "Beobachtungsjournal der Emissionen",
+       "org": "Wachturm „Sewer-2“",
+       "author": "Labor der Basis"
+      }
+     }
     },
     {
      "id": "personnel",
@@ -377,7 +759,19 @@
      "file": "content/clear-sky/personnel.md",
      "org": "База «Чистого Неба», Болота",
      "author": "Радиорубка",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Personnel",
+       "org": "Clear Sky base, Swamps",
+       "author": "Radio room"
+      },
+      "de": {
+       "title": "Personal",
+       "org": "Basis von „Klarer Himmel“, Sümpfe",
+       "author": "Funkraum"
+      }
+     }
     }
    ],
    "key": "",
@@ -415,7 +809,59 @@
     "pda-shoc",
     "pda-cs",
     "pda-cop"
-   ]
+   ],
+   "i18n": {
+    "en": {
+     "name": "Clear Sky",
+     "fullName": "The Clear Sky faction",
+     "motto": "A clear sky over the Zone",
+     "location": "Swamps, Clear Sky base",
+     "user": {
+      "name": "Clear Sky researcher",
+      "role": "Base laboratory"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "CPU: K1810VM86M  8 MHz",
+       "Memory test: 640K OK   Extended: 523264K OK",
+       "HDD 0: \"ES-5067\" 40 GB ........ OK",
+       "Network adapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Experienced",
+      "reputation": "Good"
+     }
+    },
+    "de": {
+     "name": "Klarer Himmel",
+     "fullName": "Die Gruppierung „Klarer Himmel“",
+     "motto": "Ein klarer Himmel über der Zone",
+     "location": "Sümpfe, Basis von „Klarer Himmel“",
+     "user": {
+      "name": "Forscher von „Klarer Himmel“",
+      "role": "Labor der Basis"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "Prozessor: K1810WM86M  8 MHz",
+       "Speichertest: 640K OK   Erweitert: 523264K OK",
+       "Festplatte 0: „ES-5067“ 40 GB ........ OK",
+       "Netzwerkadapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Erfahren",
+      "reputation": "Gut"
+     }
+    }
+   }
   },
   {
    "id": "iig",
@@ -443,7 +889,19 @@
      "file": "content/iig/about.md",
      "org": "Интернациональная Исследовательская Группа",
      "author": "Совет группы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "About the IRG",
+       "org": "International Research Group",
+       "author": "Group council"
+      },
+      "de": {
+       "title": "Über die IFG",
+       "org": "Internationale Forschungsgruppe",
+       "author": "Rat der Gruppe"
+      }
+     }
     },
     {
      "id": "caribbean",
@@ -452,52 +910,19 @@
      "file": "content/iig/caribbean.md",
      "org": "ИИГ, отдел анализа данных",
      "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "anomalies",
-     "title": "Klassifikation: аномальные поля",
-     "category": "research",
-     "file": "content/iig/anomalies.md",
-     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "artifacts",
-     "title": "Каталог образцов",
-     "category": "research",
-     "file": "content/iig/artifacts.md",
-     "org": "Интернациональная Исследовательская Группа, лаборатория",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "psi",
-     "title": "Psi-Phänomene: обзор",
-     "category": "research",
-     "file": "content/iig/psi.md",
-     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "fauna",
-     "title": "Mutanten: полевой справочник",
-     "category": "research",
-     "file": "content/iig/fauna.md",
-     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
-     "author": "Dr. Weiss",
-     "meta": {}
-    },
-    {
-     "id": "labs",
-     "title": "Лаборатории серии X",
-     "category": "objects",
-     "file": "content/iig/labs.md",
-     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
-     "author": "Dr. Weiss",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Dossier: the Caribbean experiment",
+       "org": "IRG, data analysis department",
+       "author": "Dr. Weiss"
+      },
+      "de": {
+       "title": "Dossier: das Karibik-Experiment",
+       "org": "IFG, Abteilung Datenanalyse",
+       "author": "Dr. Weiss"
+      }
+     }
     },
     {
      "id": "protocol",
@@ -506,7 +931,19 @@
      "file": "content/iig/protocol.md",
      "org": "Интернациональная Исследовательская Группа",
      "author": "Совет группы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Data handling protocol",
+       "org": "International Research Group",
+       "author": "Group council"
+      },
+      "de": {
+       "title": "Protokoll für den Umgang mit Daten",
+       "org": "Internationale Forschungsgruppe",
+       "author": "Rat der Gruppe"
+      }
+     }
     },
     {
      "id": "personnel",
@@ -515,7 +952,19 @@
      "file": "content/iig/personnel.md",
      "org": "Интернациональная Исследовательская Группа",
      "author": "Совет группы",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Mission staff",
+       "org": "International Research Group",
+       "author": "Group council"
+      },
+      "de": {
+       "title": "Zusammensetzung der Mission",
+       "org": "Internationale Forschungsgruppe",
+       "author": "Rat der Gruppe"
+      }
+     }
     }
    ],
    "key": "",
@@ -553,7 +1002,57 @@
     "pda-shoc",
     "pda-cs",
     "pda-cop"
-   ]
+   ],
+   "i18n": {
+    "en": {
+     "name": "IRG",
+     "fullName": "International Research Group",
+     "motto": "Scientia sine finibus: science without borders",
+     "location": "IRG mission, Cordon",
+     "user": {
+      "role": "IRG data analysis department"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "CPU: K1810VM86M  8 MHz",
+       "Memory test: 640K OK   Extended: 523264K OK",
+       "HDD 0: \"ES-5067\" 40 GB ........ OK",
+       "Network adapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Expert",
+      "reputation": "Neutral"
+     }
+    },
+    "de": {
+     "name": "IFG",
+     "fullName": "Internationale Forschungsgruppe",
+     "motto": "Scientia sine finibus: Wissenschaft ohne Grenzen",
+     "location": "IFG-Mission, Kordon",
+     "user": {
+      "role": "Abteilung Datenanalyse der IFG"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "Prozessor: K1810WM86M  8 MHz",
+       "Speichertest: 640K OK   Erweitert: 523264K OK",
+       "Festplatte 0: „ES-5067“ 40 GB ........ OK",
+       "Netzwerkadapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Experte",
+      "reputation": "Neutral"
+     }
+    }
+   }
   },
   {
    "id": "iskra",
@@ -581,7 +1080,19 @@
      "file": "content/iskra/about.md",
      "org": "НОИГ «Искра»",
      "author": "Доктор «Арцт»",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "About Iskra",
+       "org": "Iskra Research Group",
+       "author": "Doctor \"Arzt\""
+      },
+      "de": {
+       "title": "Über „Iskra“",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Doktor „Arzt“"
+      }
+     }
     },
     {
      "id": "barrier-m",
@@ -592,6 +1103,24 @@
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено": "Профессором Фидов С.П."
+     },
+     "i18n": {
+      "en": {
+       "title": "Barrier-M mutant repeller",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by": "Professor S. P. Fidov"
+       }
+      },
+      "de": {
+       "title": "Mutantenabwehr „Barrier-M“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von": "Professor S. P. Fidow"
+       }
+      }
      }
     },
     {
@@ -603,6 +1132,24 @@
      "author": "Кириллом Бурнштейном Фридрихом",
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты."
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 1P \"Prototype\"",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection."
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 1P „Prototyp“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz."
+       }
+      }
      }
     },
     {
@@ -615,6 +1162,26 @@
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
       "Происхождение": "модернизация пси-шлема первого поколения и раннего прототипа."
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 2P \"Spiral\"",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection.",
+        "Origin": "an upgrade of the first-generation psi helmet and the early prototype."
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 2P „Spirale“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz.",
+        "Herkunft": "Modernisierung des Psi-Helms der ersten Generation und des frühen Prototyps."
+       }
+      }
      }
     },
     {
@@ -627,6 +1194,26 @@
      "meta": {
       "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
       "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия, улучшение защитного пси-заслона с помощью новой системы отражения в"
+     },
+     "i18n": {
+      "en": {
+       "title": "Psi screen 3P \"Diadem\"",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Purpose": "Individual portable means of passive psi protection.",
+        "Origin": "an upgrade of the second-generation psi helmet, introducing new technologies and properties, research into germanium-based psi-absorbing alloys, and an improved protective psi screen with a new reflection system"
+       }
+      },
+      "de": {
+       "title": "Psi-Schirm 3P „Diadem“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Kirill Burnstein Friedrich",
+       "meta": {
+        "Zweck": "Individuelles tragbares Mittel zum passiven Psi-Schutz.",
+        "Herkunft": "Modernisierung des Psi-Helms der zweiten Generation mit neuen Technologien und Eigenschaften, Forschung an psi-absorbierenden Legierungen auf Germaniumbasis und verbessertem Psi-Schirm mit einem neuen Reflexionssystem"
+       }
+      }
      }
     },
     {
@@ -636,7 +1223,17 @@
      "file": "content/iskra/phenomena.md",
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Phenomena of the CAZ",
+       "org": "Iskra Scientific Operations Research Group"
+      },
+      "de": {
+       "title": "Phänomene der CAZ",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“"
+      }
+     }
     },
     {
      "id": "anomaly-fields",
@@ -647,6 +1244,24 @@
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
+     },
+     "i18n": {
+      "en": {
+       "title": "Anomalous fields",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by the theories and observations of": "Professor A. N. Kirsanov"
+       }
+      },
+      "de": {
+       "title": "Anomale Felder",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von den Theorien und Beobachtungen von": "Professor A. N. Kirsanow"
+       }
+      }
      }
     },
     {
@@ -658,6 +1273,24 @@
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
+     },
+     "i18n": {
+      "en": {
+       "title": "Anomalous formations",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by the theories and observations of": "Professor A. N. Kirsanov"
+       }
+      },
+      "de": {
+       "title": "Anomale Gebilde",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von den Theorien und Beobachtungen von": "Professor A. N. Kirsanow"
+       }
+      }
      }
     },
     {
@@ -667,7 +1300,19 @@
      "file": "content/iskra/fauna.md",
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Anomalous fauna",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "Anomale Fauna",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "psi",
@@ -676,7 +1321,19 @@
      "file": "content/iskra/psi.md",
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Psi radiation",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "Psi-Strahlung",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "emission",
@@ -687,6 +1344,24 @@
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Вдохновлено теориями": "Профессора Миллера Д.Ф."
+     },
+     "i18n": {
+      "en": {
+       "title": "The \"Emission\" anomalous storm",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov",
+       "meta": {
+        "Inspired by the theories of": "Professor D. F. Miller"
+       }
+      },
+      "de": {
+       "title": "Der anomale Sturm „Emission“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow",
+       "meta": {
+        "Inspiriert von den Theorien von": "Professor D. F. Miller"
+       }
+      }
      }
     },
     {
@@ -696,7 +1371,17 @@
      "file": "content/iskra/project-x.md",
      "org": "Научно-оперативная исследовательская группа «Искра»",
      "author": "",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "Project \"X\"",
+       "org": "Iskra Scientific Operations Research Group"
+      },
+      "de": {
+       "title": "Projekt „X“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“"
+      }
+     }
     },
     {
      "id": "polden",
@@ -707,6 +1392,24 @@
      "author": "Арцт",
      "meta": {
       "Лидер общины": "Ведущий"
+     },
+     "i18n": {
+      "en": {
+       "title": "The Noon community",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt",
+       "meta": {
+        "Community leader": "The Leader"
+       }
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Mittag“",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt",
+       "meta": {
+        "Anführer der Gemeinschaft": "Der Führende"
+       }
+      }
      }
     },
     {
@@ -718,6 +1421,24 @@
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
      "meta": {
       "Статус": "Активно"
+     },
+     "i18n": {
+      "en": {
+       "title": "Improvised psi relay",
+       "org": "Iskra Scientific Operations Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov",
+       "meta": {
+        "Status": "Active"
+       }
+      },
+      "de": {
+       "title": "Behelfsmäßiger Psi-Relais",
+       "org": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow",
+       "meta": {
+        "Status": "Aktiv"
+       }
+      }
      }
     },
     {
@@ -727,7 +1448,19 @@
      "file": "content/iskra/monolith.md",
      "org": "НОИГ «Искра»",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Monolith community",
+       "org": "Iskra Research Group",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Monolith“",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Auskunftsabteilung"
+      }
+     }
     },
     {
      "id": "freedom",
@@ -736,7 +1469,19 @@
      "file": "content/iskra/freedom.md",
      "org": "НОИГ «Искра»",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Freedom community",
+       "org": "Iskra Research Group",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Freiheit“",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Auskunftsabteilung"
+      }
+     }
     },
     {
      "id": "duty",
@@ -745,7 +1490,19 @@
      "file": "content/iskra/duty.md",
      "org": "НОИГ «Искра»",
      "author": "Справочный отдел",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Duty community",
+       "org": "Iskra Research Group",
+       "author": "Reference department"
+      },
+      "de": {
+       "title": "Die Gemeinschaft „Pflicht“",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Auskunftsabteilung"
+      }
+     }
     },
     {
      "id": "monolith-unit",
@@ -754,7 +1511,19 @@
      "file": "content/iskra/monolith-unit.md",
      "org": "НОИГ «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "The Monolith psi installation",
+       "org": "Iskra Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "Die Psi-Anlage „Monolith“",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "rainbow-1",
@@ -763,7 +1532,19 @@
      "file": "content/iskra/rainbow-1.md",
      "org": "НОИГ «Искра»",
      "author": "Арцт Кирилл Бурнштейн Фридрихов",
-     "meta": {}
+     "meta": {},
+     "i18n": {
+      "en": {
+       "title": "\"Raduga-1\" (the Brain Scorcher)",
+       "org": "Iskra Research Group",
+       "author": "Arzt Kirill Burnstein Friedrichov"
+      },
+      "de": {
+       "title": "„Raduga-1“ (der Hirnbrenner)",
+       "org": "Forschungsgruppe „Iskra“",
+       "author": "Arzt Kirill Burnstein Friedrichow"
+      }
+     }
     },
     {
      "id": "disketa",
@@ -774,7 +1555,19 @@
      "author": "ИИ-О/1",
      "meta": {},
      "kind": "chat",
-     "icon": "assets/img/emblems/disk-o1.png"
+     "icon": "assets/img/emblems/disk-o1.png",
+     "i18n": {
+      "en": {
+       "title": "Diskette AI-O/1",
+       "org": "The \"Diskette\" carrier, received from the Noon community",
+       "author": "AI-O/1"
+      },
+      "de": {
+       "title": "Diskette KI-O/1",
+       "org": "Datenträger „Diskette“, erhalten von der Gemeinschaft „Mittag“",
+       "author": "KI-O/1"
+      }
+     }
     }
    ],
    "key": "",
@@ -812,7 +1605,87 @@
     "pda-shoc",
     "pda-cs",
     "pda-cop"
-   ]
+   ],
+   "i18n": {
+    "en": {
+     "name": "Iskra",
+     "fullName": "Iskra Scientific Operations Research Group",
+     "motto": "From a spark a flame will kindle",
+     "location": "Northern Swamps, Iskra camp",
+     "user": {
+      "name": "Doctor \"Arzt\"",
+      "role": "Head of the group's research and development"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "CPU: K1810VM86M  8 MHz",
+       "Memory test: 640K OK   Extended: 523264K OK",
+       "HDD 0: \"ES-5067\" 40 GB ........ OK",
+       "Network adapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Veteran",
+      "reputation": "Excellent"
+     }
+    },
+    "de": {
+     "name": "Iskra",
+     "fullName": "Wissenschaftlich-operative Forschungsgruppe „Iskra“",
+     "motto": "Aus dem Funken schlägt die Flamme",
+     "location": "Nördliche Sümpfe, Lager von „Iskra“",
+     "user": {
+      "name": "Doktor „Arzt“",
+      "role": "Leiter der Forschung und Entwicklung der Gruppe"
+     },
+     "os": {
+      "agatName": "Okna XP",
+      "laptopName": "Okna Vista",
+      "bios": [
+       "AGAT-5189 ROM v2.07  (c) NPO Agat",
+       "Prozessor: K1810WM86M  8 MHz",
+       "Speichertest: 640K OK   Erweitert: 523264K OK",
+       "Festplatte 0: „ES-5067“ 40 GB ........ OK",
+       "Netzwerkadapter CAZ-NET ........ OK"
+      ]
+     },
+     "pda": {
+      "rank": "Veteran",
+      "reputation": "Ausgezeichnet"
+     }
+    }
+   }
   }
- ]
+ ],
+ "i18n": {
+  "en": {
+   "categories": {
+    "about": "About the faction",
+    "tech": "Technology developments",
+    "med": "Medical developments",
+    "research": "Research",
+    "communities": "CAZ communities",
+    "objects": "Sites",
+    "intel": "Intercepts",
+    "field": "Field notes",
+    "staff": "Personnel"
+   }
+  },
+  "de": {
+   "categories": {
+    "about": "Über die Gruppierung",
+    "tech": "Technische Entwicklungen",
+    "med": "Medizinische Entwicklungen",
+    "research": "Forschung",
+    "communities": "Gemeinschaften der CAZ",
+    "objects": "Objekte",
+    "intel": "Abgefangenes",
+    "field": "Feldaufzeichnungen",
+    "staff": "Personal"
+   }
+  }
+ }
 }

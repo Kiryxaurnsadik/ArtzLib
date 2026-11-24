@@ -3,6 +3,7 @@ import { WindowManager } from './wm.js';
 import { ICONS, docIcon, renderDocInto, clock } from './views.js';
 import { groupDocs } from './store.js';
 import { esc } from './md.js';
+import { t, getLang } from './i18n.js';
 
 export function renderLaptop(root, { faction, data, skipBoot }) {
   root.innerHTML = `
@@ -13,12 +14,12 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
           <div class="screen-inner vista" data-screen></div>
           <div class="lcd-fx" aria-hidden="true"></div>
         </div>
-        <div class="laptop-brand">${esc(faction.name)} · ПОЛЕВОЙ</div>
+        <div class="laptop-brand">${esc(faction.name)} · ${t('ПОЛЕВОЙ')}</div>
       </div>
       <div class="laptop-base"><div class="laptop-keys"></div><div class="laptop-pad"></div></div>
     </div>`;
   const screen = root.querySelector('[data-screen]');
-  const osName = faction.os?.laptopName || 'Окна Vista';
+  const osName = faction.os?.laptopName || 'Okna Vista';
   const avatar = faction.look?.avatar || faction.emblem;
   const abs = (u) => (u ? new URL(u, location.href).href : '');
   const wall = faction.look?.wallpaperLaptop;
@@ -30,7 +31,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
   try { booted = sessionStorage.getItem(bootKey) === '1'; } catch { /* */ }
 
   function boot() {
-    screen.innerHTML = `<div class="vista-boot"><div class="vista-boot-bar"><i></i></div><div class="vista-boot-copy">© НПО «Агат» · ${esc(osName)}</div></div>`;
+    screen.innerHTML = `<div class="vista-boot"><div class="vista-boot-bar"><i></i></div><div class="vista-boot-copy">${t('© НПО «Агат»')} · ${esc(osName)}</div></div>`;
     setTimeout(login, 2200);
   }
 
@@ -39,9 +40,9 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       <div class="vista-login">
         <div class="vista-login-tile">
           <div class="vista-userpic"><img src="${avatar}" alt=""></div>
-          <div class="vista-login-name">${esc(faction.user?.name || 'Оператор')}</div>
-          <form class="vista-login-form"><input type="password" placeholder="Пароль" aria-label="Пароль"><button type="submit" aria-label="Войти">➜</button></form>
-          <div class="vista-login-hint">${esc(faction.os?.laptopHint || (pass ? '' : 'Подсказка: любой пароль'))}</div>
+          <div class="vista-login-name">${esc(faction.user?.name || t('Оператор'))}</div>
+          <form class="vista-login-form"><input type="password" placeholder="${t('Пароль')}" aria-label="${t('Пароль')}"><button type="submit" aria-label="${t('Войти')}">➜</button></form>
+          <div class="vista-login-hint">${esc(faction.os?.laptopHint || (pass ? '' : t('Подсказка: любой пароль')))}</div>
         </div>
         <div class="vista-login-brand">${esc(osName)} · ${esc(faction.fullName)}</div>
       </div>`;
@@ -49,12 +50,12 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (pass && form.querySelector('input').value !== pass) {
-        screen.querySelector('.vista-login-hint').textContent = 'Неверный пароль. Повторите попытку.';
+        screen.querySelector('.vista-login-hint').textContent = t('Неверный пароль. Повторите попытку.');
         form.querySelector('input').value = '';
         return;
       }
       screen.querySelector('.vista-login').classList.add('is-welcome');
-      screen.querySelector('.vista-login-hint').textContent = 'Добро пожаловать';
+      screen.querySelector('.vista-login-hint').textContent = t('Добро пожаловать');
       setTimeout(desktop, 900);
     });
     setTimeout(() => form.querySelector('input')?.focus({ preventScroll: true }), 50);
@@ -66,29 +67,29 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       <div class="vista-desktop ${wall ? 'has-wall' : ''} ${showEmb ? '' : 'no-emblem'}" style="--emblem:url('${abs(faction.emblem)}');${wall ? `--wall:url('${abs(wall)}')` : ''}">
         <div class="vista-icons"></div>
         <aside class="vista-sidebar">
-          <div class="gadget g-clock"><div class="g-clock-face"><i class="h"></i><i class="m"></i><i class="s"></i></div><div class="g-cap">${esc(faction.location || 'ЧАЗ')}</div></div>
-          <div class="gadget g-meter"><div class="g-title">Радиационный фон</div><div class="g-val" data-rad>0.18</div><div class="g-unit">мкЗв/ч</div><div class="g-bar"><i data-radbar></i></div></div>
-          <div class="gadget g-meter g-psi"><div class="g-title">Пси-фон</div><div class="g-val" data-psi>12</div><div class="g-unit">усл. ед.</div><div class="g-bar"><i data-psibar></i></div></div>
-          <div class="gadget g-notes"><div class="g-title">Заметки</div><div class="g-note">${esc(faction.look?.note || faction.motto || '')}</div></div>
+          <div class="gadget g-clock"><div class="g-clock-face"><i class="h"></i><i class="m"></i><i class="s"></i></div><div class="g-cap">${esc(faction.location || t('ЧАЗ'))}</div></div>
+          <div class="gadget g-meter"><div class="g-title">${t('Радиационный фон')}</div><div class="g-val" data-rad>0.18</div><div class="g-unit">${t('мкЗв/ч')}</div><div class="g-bar"><i data-radbar></i></div></div>
+          <div class="gadget g-meter g-psi"><div class="g-title">${t('Пси-фон')}</div><div class="g-val" data-psi>12</div><div class="g-unit">${t('усл. ед.')}</div><div class="g-bar"><i data-psibar></i></div></div>
+          <div class="gadget g-notes"><div class="g-title">${t('Заметки')}</div><div class="g-note">${esc(faction.look?.note || faction.motto || '')}</div></div>
         </aside>
         <div class="vista-windows"></div>
       </div>
       <footer class="vista-taskbar">
-        <button type="button" class="vista-orb" aria-label="Пуск"><img src="${faction.emblem}" alt=""></button>
+        <button type="button" class="vista-orb" aria-label="${t('Пуск')}"><img src="${faction.emblem}" alt=""></button>
         <div class="vista-quick"></div>
         <div class="vista-tasks"></div>
-        <div class="vista-tray"><span>RU</span><time></time></div>
+        <div class="vista-tray"><span>${getLang().toUpperCase()}</span><time></time></div>
       </footer>
       <div class="vista-start" hidden>
         <div class="vs-left">
           <ul class="vs-list"></ul>
-          <div class="vs-search"><input type="search" placeholder="Начать поиск" aria-label="Поиск документов"></div>
+          <div class="vs-search"><input type="search" placeholder="${t('Начать поиск')}" aria-label="${t('Поиск документов')}"></div>
         </div>
         <div class="vs-right">
           <div class="vs-pic"><img src="${avatar}" alt=""></div>
-          <b class="vs-user">${esc(faction.user?.name || 'Оператор')}</b>
+          <b class="vs-user">${esc(faction.user?.name || t('Оператор'))}</b>
           <ul class="vs-places"></ul>
-          <div class="vs-power"><button type="button" data-act="lock" aria-label="Блокировать">🔒</button><button type="button" data-act="off" aria-label="Завершение работы">⏻</button></div>
+          <div class="vs-power"><button type="button" data-act="lock" aria-label="${t('Блокировать')}">🔒</button><button type="button" data-act="off" aria-label="${t('Завершение работы')}">⏻</button></div>
         </div>
       </div>`;
     clock(screen.querySelector('.vista-tray time'));
@@ -108,15 +109,15 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       body.className = 'vista-ex';
       body.innerHTML = `
         <div class="vx-top">
-          <div class="vx-nav"><button type="button" aria-label="Назад">◀</button><button type="button" aria-label="Вперёд">▶</button></div>
+          <div class="vx-nav"><button type="button" aria-label="${t('Назад')}">◀</button><button type="button" aria-label="${t('Вперёд')}">▶</button></div>
           <div class="vx-crumbs"></div>
-          <input class="vx-search" type="search" placeholder="Поиск" aria-label="Поиск">
+          <input class="vx-search" type="search" placeholder="${t('Поиск')}" aria-label="${t('Поиск')}">
         </div>
-        <div class="vx-cmd"><span>Упорядочить ▾</span><span>Виды ▾</span><span>Общий доступ</span></div>
+        <div class="vx-cmd"><span>${t('Упорядочить')} ▾</span><span>${t('Виды')} ▾</span><span>${t('Общий доступ')}</span></div>
         <div class="vx-main">
           <nav class="vx-tree"></nav>
           <div class="vx-files"></div>
-          <div class="vx-preview"><div class="vx-prev-empty">Выберите файл для предварительного просмотра.</div></div>
+          <div class="vx-preview"><div class="vx-prev-empty">${t('Выберите файл для предварительного просмотра.')}</div></div>
         </div>
         <div class="vx-status"></div>`;
       const tree = body.querySelector('.vx-tree');
@@ -132,7 +133,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
         const list = q
           ? (faction.docs || []).filter((d) => d.title.toLowerCase().includes(q.toLowerCase()))
           : g?.docs || [];
-        crumbs.textContent = q ? `Результаты поиска: ${q}` : `${faction.name} ▸ Документы ▸ ${g?.name || ''}`;
+        crumbs.textContent = q ? t('Результаты поиска: {q}', { q }) : `${faction.name} ▸ ${t('Документы')} ▸ ${g?.name || ''}`;
         files.innerHTML = '';
         list.forEach((d) => {
           const b = document.createElement('button');
@@ -142,13 +143,13 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
           b.addEventListener('click', () => {
             files.querySelectorAll('.is-sel').forEach((n) => n.classList.remove('is-sel'));
             b.classList.add('is-sel');
-            prev.innerHTML = `<img class="vx-prev-ico" src="${docIcon(d)}" alt=""><b>${esc(d.title)}</b><span>${esc(d.org || '')}</span><span>${esc(d.author || '')}</span><button type="button" class="vx-open">Открыть</button>`;
+            prev.innerHTML = `<img class="vx-prev-ico" src="${docIcon(d)}" alt=""><b>${esc(d.title)}</b><span>${esc(d.org || '')}</span><span>${esc(d.author || '')}</span><button type="button" class="vx-open">${t('Открыть')}</button>`;
             prev.querySelector('.vx-open').addEventListener('click', () => openDoc(d));
           });
           b.addEventListener('dblclick', () => openDoc(d));
           files.appendChild(b);
         });
-        status.textContent = `Элементов: ${list.length}`;
+        status.textContent = t('Элементов: {n}', { n: list.length });
       };
       groups.forEach((g) => {
         const b = document.createElement('button');
@@ -160,7 +161,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       });
       body.querySelector('.vx-search').addEventListener('input', (e) => show(cur, e.target.value.trim()));
       show(cur);
-      wm.open('explorer', { title: 'Документы', icon: ICONS.folder, content: body, width: 760, height: 470 });
+      wm.open('explorer', { title: t('Документы'), icon: ICONS.folder, content: body, width: 760, height: 470 });
     };
 
     // значки
@@ -176,17 +177,17 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
       icons.appendChild(b);
     };
     const about = (faction.docs || []).find((d) => d.category === 'about');
-    addIcon('Компьютер', ICONS.pc, () => about && openDoc(about));
-    addIcon('Документы', ICONS.folder, () => openExplorer());
+    addIcon(t('Компьютер'), ICONS.pc, () => about && openDoc(about));
+    addIcon(t('Документы'), ICONS.folder, () => openExplorer());
     const chat = (faction.docs || []).find((d) => d.kind === 'chat');
     if (chat) addIcon(chat.title, docIcon(chat), () => openDoc(chat));
-    addIcon('Корзина', ICONS.bin, () => wm.open('bin', { title: 'Корзина', icon: ICONS.bin, content: '<div class="xp-empty">Корзина пуста.</div>', width: 380, height: 220 }));
+    addIcon(t('Корзина'), ICONS.bin, () => wm.open('bin', { title: t('Корзина'), icon: ICONS.bin, content: `<div class="xp-empty">${t('Корзина пуста.')}</div>`, width: 380, height: 220 }));
 
     // быстрый запуск
     const quick = screen.querySelector('.vista-quick');
     const q = document.createElement('button');
     q.type = 'button';
-    q.innerHTML = `<img src="${ICONS.folder}" alt="Документы">`;
+    q.innerHTML = `<img src="${ICONS.folder}" alt="${t('Документы')}">`;
     q.addEventListener('click', () => openExplorer());
     quick.appendChild(q);
 
@@ -202,7 +203,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
         li.firstElementChild.addEventListener('click', () => { start.hidden = true; openDoc(d); });
         list.appendChild(li);
       });
-      if (!docs.length) list.innerHTML = '<li class="vs-none">Ничего не найдено</li>';
+      if (!docs.length) list.innerHTML = `<li class="vs-none">${t('Ничего не найдено')}</li>`;
     };
     fill();
     start.querySelector('.vs-search input').addEventListener('input', (e) => fill(e.target.value.trim()));
@@ -217,7 +218,7 @@ export function renderLaptop(root, { faction, data, skipBoot }) {
     screen.addEventListener('click', (e) => { if (!e.target.closest('.vista-start')) start.hidden = true; });
     start.querySelector('[data-act="lock"]').addEventListener('click', () => { wm.closeAll(); login(); });
     start.querySelector('[data-act="off"]').addEventListener('click', () => {
-      screen.innerHTML = '<div class="vista-off">Завершение работы...</div>';
+      screen.innerHTML = `<div class="vista-off">${t('Завершение работы...')}</div>`;
       try { sessionStorage.removeItem(bootKey); } catch { /* */ }
       setTimeout(() => { if (screen.isConnected) screen.innerHTML = '<div class="vista-off is-dark"></div>'; }, 1500);
     });

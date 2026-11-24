@@ -1,5 +1,6 @@
 import { renderMarkdown, parseChat, esc } from './md.js';
 import { loadDoc } from './store.js';
+import { t, locale } from './i18n.js';
 
 export const ICONS = {
   folder: 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M4 12h15l4 4h21v24H4z" fill="#e8b54a"/><path d="M4 18h40v22H4z" fill="#f6d27a"/><path d="M4 18h40v3H4z" fill="#fff" opacity=".35"/></svg>'),
@@ -26,21 +27,21 @@ export function docHeaderHTML(doc, faction) {
       <div>
         <div class="doc-org">${esc(doc.org || faction.fullName)}</div>
         <h1 class="doc-title">${esc(doc.title)}</h1>
-        ${doc.author ? `<div class="doc-author">Автор: ${esc(doc.author)}</div>` : ''}
+        ${doc.author ? `<div class="doc-author">${t('Автор')}: ${esc(doc.author)}</div>` : ''}
       </div>
     </header>
     ${meta ? `<dl class="doc-meta">${meta}</dl>` : ''}`;
 }
 
 export async function renderDocInto(el, doc, faction, { header = true } = {}) {
-  el.innerHTML = '<div class="doc-loading">Загрузка...</div>';
+  el.innerHTML = `<div class="doc-loading">${t('Загрузка...')}</div>`;
   const md = await loadDoc(doc);
   if (doc.kind === 'chat') {
     el.innerHTML = '';
     el.appendChild(chatView(md, doc));
     return;
   }
-  el.innerHTML = `<article class="doc">${header ? docHeaderHTML(doc, faction) : ''}<div class="doc-body">${renderMarkdown(md) || '<p class="muted">Документ пуст.</p>'}</div></article>`;
+  el.innerHTML = `<article class="doc">${header ? docHeaderHTML(doc, faction) : ''}<div class="doc-body">${renderMarkdown(md) || `<p class="muted">${t('Документ пуст.')}</p>`}</div></article>`;
 }
 
 // «Дискета»: диалог запрос — ответ с эффектом печати
@@ -59,7 +60,7 @@ export function chatView(md, doc) {
   });
   const menu = document.createElement('div');
   menu.className = 'chat-menu';
-  menu.innerHTML = `<div class="chat-menu-title">Запросы к ${esc(doc.author || 'ИИ')}:</div>`;
+  menu.innerHTML = `<div class="chat-menu-title">${esc(t('Запросы к {who}:', { who: doc.author || t('ИИ') }))}</div>`;
   pairs.forEach((p, i) => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -77,7 +78,7 @@ export function chatView(md, doc) {
     const a = document.createElement('div');
     a.className = 'chat-msg chat-a';
     log.appendChild(a);
-    const text = p.a ? p.a.text : 'Нет данных. Повторите запрос.';
+    const text = p.a ? p.a.text : t('Нет данных. Повторите запрос.');
     let i = 0;
     const tick = () => {
       i = Math.min(text.length, i + 6);
@@ -93,7 +94,7 @@ export function chatView(md, doc) {
 }
 
 export function clock(el, opts = { hour: '2-digit', minute: '2-digit' }) {
-  const upd = () => { if (el.isConnected) el.textContent = new Date().toLocaleTimeString('ru-RU', opts); };
+  const upd = () => { if (el.isConnected) el.textContent = new Date().toLocaleTimeString(locale(), opts); };
   upd();
   const id = setInterval(() => (el.isConnected ? upd() : clearInterval(id)), 10000);
 }

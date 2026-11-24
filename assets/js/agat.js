@@ -3,9 +3,10 @@ import { WindowManager } from './wm.js';
 import { ICONS, docIcon, renderDocInto, clock } from './views.js';
 import { groupDocs } from './store.js';
 import { esc } from './md.js';
+import { t } from './i18n.js';
 
 export function renderAgat(root, { faction, data, skipBoot }) {
-  const osName = faction.os?.agatName || 'Окна XP';
+  const osName = faction.os?.agatName || 'Okna XP';
   const avatar = faction.look?.avatar || faction.emblem;
   const abs = (u) => (u ? new URL(u, location.href).href : '');
   const wall = faction.look?.wallpaperAgat;
@@ -18,7 +19,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
           <div class="crt-fx" aria-hidden="true"></div>
         </div>
         <div class="agat-plate"><span>АГАТ 5189</span></div>
-        <button type="button" class="agat-power" aria-label="Питание"></button>
+        <button type="button" class="agat-power" aria-label="${t('Питание')}"></button>
         <i class="agat-led"></i>
       </div>
       <div class="agat-neck"></div><div class="agat-foot"></div>
@@ -40,9 +41,9 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     const pre = screen.firstElementChild;
     const lines = [
       ...(faction.os?.bios?.length ? faction.os.bios : ['АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»']),
-      `Терминал: ${(faction.os?.computer || faction.name).toUpperCase()} / ${faction.location || 'ЧАЗ'}`,
+      `${t('Терминал')}: ${(faction.os?.computer || faction.name).toUpperCase()} / ${faction.location || t('ЧАЗ')}`,
       '',
-      'Загрузка системы...',
+      t('Загрузка системы...'),
     ];
     let i = 0;
     const next = () => {
@@ -61,7 +62,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
         <img src="${faction.emblem}" alt="">
         <div class="xp-splash-name">${esc(osName)} <small>${esc(faction.name)}</small></div>
         <div class="xp-splash-bar"><i></i><i></i><i></i></div>
-        <div class="xp-splash-copy">© НПО «Агат», Терминальная редакция для ЧАЗ</div>
+        <div class="xp-splash-copy">${t('© НПО «Агат», Терминальная редакция для ЧАЗ')}</div>
       </div>`;
     setTimeout(welcome, 1800);
   }
@@ -73,16 +74,16 @@ export function renderAgat(root, { faction, data, skipBoot }) {
         <div class="xp-welcome-mid">
           <div class="xp-welcome-left">
             <img src="${faction.emblem}" alt="">
-            <p>Чтобы начать работу, щёлкните имя пользователя</p>
+            <p>${t('Чтобы начать работу, щёлкните имя пользователя')}</p>
           </div>
           <div class="xp-welcome-users">
             <button type="button" class="xp-user">
               <img src="${avatar}" alt="">
-              <span><b>${esc(faction.user?.name || 'Оператор')}</b><small>${esc(faction.user?.role || '')}</small></span>
+              <span><b>${esc(faction.user?.name || t('Оператор'))}</b><small>${esc(faction.user?.role || '')}</small></span>
             </button>
           </div>
         </div>
-        <div class="xp-welcome-bot"><span>Выключить компьютер</span></div>
+        <div class="xp-welcome-bot"><span>${t('Выключить компьютер')}</span></div>
       </div>`;
     screen.querySelector('.xp-user').addEventListener('click', () => {
       screen.querySelector('.xp-welcome').classList.add('is-loading');
@@ -98,14 +99,14 @@ export function renderAgat(root, { faction, data, skipBoot }) {
         <div class="xp-windows"></div>
       </div>
       <footer class="xp-taskbar">
-        <button type="button" class="xp-start"><img src="${faction.emblem}" alt=""><span>пуск</span></button>
+        <button type="button" class="xp-start"><img src="${faction.emblem}" alt=""><span>${t('пуск')}</span></button>
         <div class="xp-tasks"></div>
-        <div class="xp-tray"><span class="xp-tray-ico" title="Сеть ЧАЗ-NET">📶</span><time></time></div>
+        <div class="xp-tray"><span class="xp-tray-ico" title="${t('Сеть ЧАЗ-NET')}">📶</span><time></time></div>
       </footer>
       <div class="xp-startmenu" hidden>
-        <div class="xp-sm-head"><img src="${avatar}" alt=""><b>${esc(faction.user?.name || 'Оператор')}</b></div>
+        <div class="xp-sm-head"><img src="${avatar}" alt=""><b>${esc(faction.user?.name || t('Оператор'))}</b></div>
         <div class="xp-sm-cols"><ul class="xp-sm-left"></ul><ul class="xp-sm-right"></ul></div>
-        <div class="xp-sm-foot"><button type="button" data-act="logoff">Выход из системы</button><button type="button" data-act="off">Выключение</button></div>
+        <div class="xp-sm-foot"><button type="button" data-act="logoff">${t('Выход из системы')}</button><button type="button" data-act="off">${t('Выключение')}</button></div>
       </div>`;
     clock(screen.querySelector('.xp-tray time'));
     const wm = new WindowManager(screen.querySelector('.xp-windows'), screen.querySelector('.xp-tasks'));
@@ -127,7 +128,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     const openDoc = (doc) => {
       const body = document.createElement('div');
       body.className = doc.kind === 'chat' ? 'xp-term' : 'xp-doc';
-      wm.open(`doc:${doc.id}`, { title: `${doc.title} — ${doc.kind === 'chat' ? 'Терминал' : 'Просмотр документа'}`, icon: docIcon(doc), content: body, width: 640, height: 470 });
+      wm.open(`doc:${doc.id}`, { title: `${doc.title} — ${doc.kind === 'chat' ? t('Терминал') : t('Просмотр документа')}`, icon: docIcon(doc), content: body, width: 640, height: 470 });
       renderDocInto(body, doc, faction);
     };
 
@@ -135,10 +136,10 @@ export function renderAgat(root, { faction, data, skipBoot }) {
       const body = document.createElement('div');
       body.className = 'xp-explorer';
       body.innerHTML = `
-        <div class="xp-ex-bar"><span>Файл</span><span>Правка</span><span>Вид</span><span>Избранное</span><span>Сервис</span><span>Справка</span></div>
-        <div class="xp-ex-addr">Адрес: <input readonly value="C:\\${esc((faction.os?.computer || faction.id).toUpperCase())}\\${esc(g.name)}"></div>
+        <div class="xp-ex-bar"><span>${t('Файл')}</span><span>${t('Правка')}</span><span>${t('Вид')}</span><span>${t('Избранное')}</span><span>${t('Сервис')}</span><span>${t('Справка')}</span></div>
+        <div class="xp-ex-addr">${t('Адрес')}: <input readonly value="C:\\${esc((faction.os?.computer || faction.id).toUpperCase())}\\${esc(g.name)}"></div>
         <div class="xp-ex-main">
-          <aside class="xp-ex-side"><div class="xp-ex-panel"><h4>Задачи для файлов</h4><p>Документов: ${g.docs.length}</p></div><div class="xp-ex-panel"><h4>Другие места</h4><p>${esc(faction.fullName)}</p></div></aside>
+          <aside class="xp-ex-side"><div class="xp-ex-panel"><h4>${t('Задачи для файлов')}</h4><p>${t('Документов: {n}', { n: g.docs.length })}</p></div><div class="xp-ex-panel"><h4>${t('Другие места')}</h4><p>${esc(faction.fullName)}</p></div></aside>
           <div class="xp-ex-files"></div>
         </div>`;
       const files = body.querySelector('.xp-ex-files');
@@ -159,15 +160,15 @@ export function renderAgat(root, { faction, data, skipBoot }) {
       const body = document.createElement('div');
       body.className = 'far';
       const all = faction.docs || [];
-      const left = groups.map((g) => `<li data-g="${g.id}"><span>${esc(g.name)}</span><span>&lt;Папка&gt;</span></li>`).join('');
+      const left = groups.map((g) => `<li data-g="${g.id}"><span>${esc(g.name)}</span><span>&lt;${t('Папка')}&gt;</span></li>`).join('');
       body.innerHTML = `
-        <div class="far-menu"><span>Левая</span><span>Файлы</span><span>Команды</span><span>Параметры</span><span>Правая</span></div>
+        <div class="far-menu"><span>${t('Левая')}</span><span>${t('Файлы')}</span><span>${t('Команды')}</span><span>${t('Параметры')}</span><span>${t('Правая')}</span></div>
         <div class="far-panels">
           <div class="far-panel"><div class="far-path">C:\\${faction.id.toUpperCase()}</div><ul class="far-list far-left">${left}</ul></div>
           <div class="far-panel"><div class="far-path far-rpath">C:\\${faction.id.toUpperCase()}\\</div><ul class="far-list far-right"></ul></div>
         </div>
-        <div class="far-status">${all.length} файлов · ${esc(faction.name)}</div>
-        <div class="far-keys"><span>1<b>Помощь</b></span><span>3<b>Просм</b></span><span>5<b>Копир</b></span><span>8<b>Удален</b></span><span>10<b>Выход</b></span></div>`;
+        <div class="far-status">${t('{n} файлов', { n: all.length })} · ${esc(faction.name)}</div>
+        <div class="far-keys"><span>1<b>${t('Помощь')}</b></span><span>3<b>${t('Просм')}</b></span><span>5<b>${t('Копир')}</b></span><span>8<b>${t('Удален')}</b></span><span>10<b>${t('Выход')}</b></span></div>`;
       const right = body.querySelector('.far-right');
       const showGroup = (gid) => {
         const g = groups.find((x) => x.id === gid);
@@ -177,7 +178,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
         g.docs.forEach((d) => {
           const li = document.createElement('li');
           li.tabIndex = 0;
-          li.innerHTML = `<span>${esc(d.title)}</span><span>${d.kind === 'chat' ? 'ДИСК' : 'ДОК'}</span>`;
+          li.innerHTML = `<span>${esc(d.title)}</span><span>${d.kind === 'chat' ? t('ДИСК') : t('ДОК')}</span>`;
           li.addEventListener('click', () => openDoc(d));
           li.addEventListener('keydown', (e) => { if (e.key === 'Enter') openDoc(d); });
           right.appendChild(li);
@@ -189,10 +190,10 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     };
 
     const about = (faction.docs || []).find((d) => d.category === 'about');
-    addIcon('Мой терминал', ICONS.pc, () => about && openDoc(about));
+    addIcon(t('Мой терминал'), ICONS.pc, () => about && openDoc(about));
     groups.filter((g) => g.id !== 'about').forEach((g) => addIcon(g.name, ICONS.folder, () => openFolder(g)));
     addIcon('Far', ICONS.term, openFar);
-    addIcon('Корзина', ICONS.bin, () => wm.open('bin', { title: 'Корзина', icon: ICONS.bin, content: '<div class="xp-empty">Корзина пуста.</div>', width: 360, height: 220 }));
+    addIcon(t('Корзина'), ICONS.bin, () => wm.open('bin', { title: t('Корзина'), icon: ICONS.bin, content: `<div class="xp-empty">${t('Корзина пуста.')}</div>`, width: 360, height: 220 }));
 
     // Пуск
     const sm = screen.querySelector('.xp-startmenu');
@@ -212,7 +213,7 @@ export function renderAgat(root, { faction, data, skipBoot }) {
     screen.addEventListener('click', (e) => { if (!e.target.closest('.xp-startmenu')) sm.hidden = true; });
     sm.querySelector('[data-act="logoff"]').addEventListener('click', () => { wm.closeAll(); welcome(); });
     sm.querySelector('[data-act="off"]').addEventListener('click', () => {
-      screen.innerHTML = '<div class="xp-off">Теперь питание компьютера можно отключить.</div>';
+      screen.innerHTML = `<div class="xp-off">${t('Теперь питание компьютера можно отключить.')}</div>`;
       try { sessionStorage.removeItem(bootKey); } catch { /* */ }
     });
 

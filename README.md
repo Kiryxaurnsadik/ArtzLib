@@ -30,6 +30,8 @@ STALKER RP - Artz RolePlay
 
 Админка: https://kiryxaurnsadik.github.io/ArtzLib/admin.html
 
+Язык: кнопка RU/EN/DE есть на каждой странице, выбор запоминается в браузере. Чтобы ссылка сразу открывалась на нужном языке, добавьте `?lang=en` или `?lang=de` (вместе с ключом: `?k=ключ&lang=en`). Переводы документов лежат в `content/<группировка>/en/` и `content/<группировка>/de/`; если перевода нет, показывается русский текст.
+
 | Группировка | Все устройства | Агат 5189 | Ноутбук | КПК STALKER 2 | КПК ТЧ | КПК ЧН | КПК ЗП |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | НИИЧАЗ | [открыть](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/agat) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/laptop) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-s2) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-shoc) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-cs) | [ссылка](https://kiryxaurnsadik.github.io/ArtzLib/#/niichaz/pda-cop) |

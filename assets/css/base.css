@@ -117,3 +117,13 @@ img { max-width: 100%; }
 .dthumb-pda-cs { border-color: #6b4a2c; background: #2a1d12; }
 .dthumb-pda-cop { border-color: #4a585c; background: #151d20; }
 .preview-back { display: block; padding: 6px 16px; background: #3a2a10; color: #f0c27a; font-size: 13px; text-decoration: none; flex: none; }
+
+/* переключатель языка на страницах выбора */
+.lang-switch { display: inline-flex; gap: 2px; margin-top: 10px; padding: 2px; border: 1px solid #ffffff26; border-radius: 6px; background: #0006; }
+.lang-switch button { border: 0; background: none; color: inherit; font: 600 12px/1 'PT Sans Narrow', sans-serif; letter-spacing: .06em; padding: 6px 9px; border-radius: 4px; cursor: pointer; opacity: .6; }
+.lang-switch button:hover { opacity: 1; }
+.lang-switch button.is-cur { background: #ffffff22; opacity: 1; }
+.fhead .lang-switch { margin: 0 0 0 auto; align-self: center; }
+/* терминалы: без выделения текста */
+#app { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+#app input, #app textarea { -webkit-user-select: text; user-select: text; }

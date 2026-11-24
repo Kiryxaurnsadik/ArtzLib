@@ -1,3 +1,4 @@
+import { t } from './i18n.js';
 // Простой оконный менеджер для рабочих столов XP и Vista.
 let zTop = 10;
 
@@ -34,9 +35,9 @@ export class WindowManager {
         ${icon ? `<img class="win-ico" src="${icon}" alt="">` : ''}
         <span class="win-name"></span>
         <div class="win-btns">
-          <button type="button" class="wb wb-min" aria-label="Свернуть"><i></i></button>
-          <button type="button" class="wb wb-max" aria-label="Развернуть"><i></i></button>
-          <button type="button" class="wb wb-close" aria-label="Закрыть"><i></i></button>
+          <button type="button" class="wb wb-min" aria-label="${t('Свернуть')}"><i></i></button>
+          <button type="button" class="wb wb-max" aria-label="${t('Развернуть')}"><i></i></button>
+          <button type="button" class="wb wb-close" aria-label="${t('Закрыть')}"><i></i></button>
         </div>
       </header>
       <div class="win-body"></div>`;

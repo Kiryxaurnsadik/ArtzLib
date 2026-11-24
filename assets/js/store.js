@@ -75,7 +75,9 @@ export async function loadDoc(doc) {
   if (doc.body != null) return doc.body;
   if (!doc.file) return '';
   if (cache.has(doc.file)) return cache.get(doc.file);
-  const r = await fetch(doc.file);
+  let r = await fetch(doc.file);
+  // перевода нет — показываем русский оригинал
+  if (!r.ok && doc.fileOrig) r = await fetch(doc.fileOrig);
   const t = r.ok ? await r.text() : `> Документ не найден: ${doc.file}`;
   cache.set(doc.file, t);
   return t;
