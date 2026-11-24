@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T00:20:11.084Z",
+ "updatedAt": "2026-11-24T19:10:06.239Z",
  "adminHash": "00556331f1922e05b96a2cdc254b3e0de0095e9114691803427337fef17bdd4d",
  "broadcast": "",
  "screens": {
@@ -119,37 +119,37 @@
   },
   "iskra": {
    "agat": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
    },
    "laptop": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
    },
    "pda-s2": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
    },
    "pda-shoc": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
    },
    "pda-cs": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
    },
    "pda-cop": {
-    "status": "locked",
+    "status": "normal",
     "message": "",
     "code": "",
     "title": ""
