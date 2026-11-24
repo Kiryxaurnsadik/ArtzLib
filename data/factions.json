@@ -1,0 +1,818 @@
+{
+ "version": 1,
+ "rev": 2,
+ "categories": {
+  "about": "О группировке",
+  "tech": "Разработки технологий",
+  "med": "Разработки медицины",
+  "research": "Исследования",
+  "communities": "Общины ЧАЗ",
+  "objects": "Объекты",
+  "intel": "Перехват",
+  "field": "Полевые записи",
+  "staff": "Личный состав"
+ },
+ "factions": [
+  {
+   "id": "niichaz",
+   "name": "НИИЧАЗ",
+   "fullName": "Научно-исследовательский институт Чернобыльской аномальной зоны",
+   "motto": "Wissen schützt — знание защищает",
+   "emblem": "assets/img/emblems/niichaz.png",
+   "colors": {
+    "primary": "#1f3f8f",
+    "secondary": "#e9edf2",
+    "accent": "#d0283c",
+    "dark": "#0a1430"
+   },
+   "location": "Янтарь, МБУ «Янтарь»",
+   "user": {
+    "name": "Доцент Бурнштейн К. Ф.",
+    "login": "burnstein",
+    "role": "Старший научный сотрудник МБУ «Янтарь»"
+   },
+   "docs": [
+    {
+     "id": "about",
+     "title": "О НИИЧАЗ",
+     "category": "about",
+     "file": "content/niichaz/about.md",
+     "org": "НИИЧАЗ",
+     "author": "Канцелярия института",
+     "meta": {}
+    },
+    {
+     "id": "medved",
+     "title": "Детектор «Медведь»",
+     "category": "tech",
+     "file": "content/niichaz/medved.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Поиск ранее не классифицированных и нестабильных типов артефактов, находящихся на докритической стадии формирования. Способность работать в режиме расширенного спектрального сканирования, фиксируя отклонения в электромагнитных, акустических и радиационных полях."
+     }
+    },
+    {
+     "id": "kda-7",
+     "title": "Контейнер КДА-7",
+     "category": "tech",
+     "file": "content/niichaz/kda-7.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Безопасное хранение и транспортировка аномальных образований повышенной нестабильности."
+     }
+    },
+    {
+     "id": "ska-1",
+     "title": "Спец. ремень СКА-1",
+     "category": "tech",
+     "file": "content/niichaz/ska-1.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальная носимая платформа аномальных образований."
+     }
+    },
+    {
+     "id": "pz-1p",
+     "title": "Пси-заслон 1П «Прототип»",
+     "category": "tech",
+     "file": "content/niichaz/pz-1p.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты."
+     }
+    },
+    {
+     "id": "pz-2p",
+     "title": "Пси-заслон 2П «Спираль»",
+     "category": "tech",
+     "file": "content/niichaz/pz-2p.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
+      "Происхождение": "модернизация пси-шлема первого поколения и раннего прототипа."
+     }
+    },
+    {
+     "id": "pz-3p",
+     "title": "Пси-заслон 3П «Диадема»",
+     "category": "tech",
+     "file": "content/niichaz/pz-3p.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
+      "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия, улучшение защитного пси-заслона с помощью новой системы отражения в"
+     }
+    },
+    {
+     "id": "psimofon-3p",
+     "title": "Псимофон 3П",
+     "category": "tech",
+     "file": "content/niichaz/psimofon-3p.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
+      "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия."
+     }
+    },
+    {
+     "id": "pkhn-2",
+     "title": "Полевой хирургический набор СМ-ПХУ-01 (ПХН-2)",
+     "category": "med",
+     "file": "content/niichaz/pkhn-2.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "экстренные хирургические вмешательства в полевых и аномальных условиях",
+      "Минимальный ресурс повторного применения": "не менее 4 циклов"
+     }
+    },
+    {
+     "id": "psi-blocker",
+     "title": "Пси-блокатор (ВЗБП-АНТИПСИ)",
+     "category": "med",
+     "file": "content/niichaz/psi-blocker.md",
+     "org": "Научно-Исследовательский Бункер “Янтарь”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Временная защита био-поля человека от негативного пси-воздействия",
+      "Время эффекта препарата": "5 минут"
+     }
+    },
+    {
+     "id": "phenomena",
+     "title": "Феномены ЧАЗ",
+     "category": "research",
+     "file": "content/niichaz/phenomena.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "",
+     "meta": {}
+    },
+    {
+     "id": "anomaly-fields",
+     "title": "Аномальные поля",
+     "category": "research",
+     "file": "content/niichaz/anomaly-fields.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено теориями и наблюдениями": "Профессора НИИЧАЗ Кирсанова А.Н."
+     }
+    },
+    {
+     "id": "artifacts",
+     "title": "Аномальные образования",
+     "category": "research",
+     "file": "content/niichaz/artifacts.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Вдохновлено теориями": "Профессора Кирсанова А.Н."
+     }
+    },
+    {
+     "id": "fauna",
+     "title": "Аномальная фауна",
+     "category": "research",
+     "file": "content/niichaz/fauna.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "psi",
+     "title": "Пси-излучение",
+     "category": "research",
+     "file": "content/niichaz/psi.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "emission",
+     "title": "Аномальный шторм «Выброс»",
+     "category": "research",
+     "file": "content/niichaz/emission.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено теориями": "Профессора НИИЧАЗ Миллера Д.Ф."
+     }
+    },
+    {
+     "id": "project-x",
+     "title": "Проект «X»",
+     "category": "research",
+     "file": "content/niichaz/project-x.md",
+     "org": "Научно-Исследовательский Бункер “Икар”, НИИЧАЗ",
+     "author": "",
+     "meta": {}
+    },
+    {
+     "id": "monolith",
+     "title": "Община «Монолит»",
+     "category": "communities",
+     "file": "content/niichaz/monolith.md",
+     "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
+     "author": "Справочный отдел",
+     "meta": {}
+    },
+    {
+     "id": "freedom",
+     "title": "Община «Свобода»",
+     "category": "communities",
+     "file": "content/niichaz/freedom.md",
+     "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
+     "author": "Справочный отдел",
+     "meta": {}
+    },
+    {
+     "id": "duty",
+     "title": "Община «Долг»",
+     "category": "communities",
+     "file": "content/niichaz/duty.md",
+     "org": "Научно-Исследовательский Бункер «Икар», НИИЧАЗ",
+     "author": "Справочный отдел",
+     "meta": {}
+    }
+   ],
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "NIICHAZ-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "shoc",
+    "theme": "science",
+    "rank": "Учёный",
+    "reputation": "Хорошая"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
+   ]
+  },
+  {
+   "id": "clear-sky",
+   "name": "Чистое Небо",
+   "fullName": "Группировка «Чистое Небо»",
+   "motto": "Чистое небо над Зоной",
+   "emblem": "assets/img/emblems/clear-sky.png",
+   "colors": {
+    "primary": "#2f8fe0",
+    "secondary": "#f5b41c",
+    "accent": "#33c3d4",
+    "dark": "#0b2a4a"
+   },
+   "location": "Болота, база «Чистого Неба»",
+   "user": {
+    "name": "Исследователь «Чистого Неба»",
+    "login": "cs-lab",
+    "role": "Лаборатория базы"
+   },
+   "docs": [
+    {
+     "id": "about",
+     "title": "О «Чистом Небе»",
+     "category": "about",
+     "file": "content/clear-sky/about.md",
+     "org": "База «Чистого Неба», Болота",
+     "author": "Совет базы",
+     "meta": {}
+    },
+    {
+     "id": "charter",
+     "title": "Устав группировки",
+     "category": "about",
+     "file": "content/clear-sky/charter.md",
+     "org": "База «Чистого Неба», Болота",
+     "author": "Совет базы",
+     "meta": {}
+    },
+    {
+     "id": "anomalies",
+     "title": "Аномалии Болот",
+     "category": "research",
+     "file": "content/clear-sky/anomalies.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "artifacts",
+     "title": "Каталог артефактов",
+     "category": "research",
+     "file": "content/clear-sky/artifacts.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "fauna",
+     "title": "Фауна Болот",
+     "category": "research",
+     "file": "content/clear-sky/fauna.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Проводники базы",
+     "meta": {}
+    },
+    {
+     "id": "emission",
+     "title": "Природа выбросов",
+     "category": "research",
+     "file": "content/clear-sky/emission.md",
+     "org": "Лаборатория базы «Чистого Неба», Болота",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "swamps",
+     "title": "Отчёт: Болота",
+     "category": "field",
+     "file": "content/clear-sky/swamps.md",
+     "org": "База «Чистого Неба», Болота",
+     "author": "Проводники базы",
+     "meta": {}
+    },
+    {
+     "id": "emission-log",
+     "title": "Журнал наблюдений за выбросами",
+     "category": "field",
+     "file": "content/clear-sky/emission-log.md",
+     "org": "Вышка «Север-2»",
+     "author": "Лаборатория базы",
+     "meta": {}
+    },
+    {
+     "id": "personnel",
+     "title": "Личный состав",
+     "category": "staff",
+     "file": "content/clear-sky/personnel.md",
+     "org": "База «Чистого Неба», Болота",
+     "author": "Радиорубка",
+     "meta": {}
+    }
+   ],
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "CLEAR-SKY-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "cs",
+    "theme": "standard",
+    "rank": "Опытный",
+    "reputation": "Хорошая"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
+   ]
+  },
+  {
+   "id": "iig",
+   "name": "ИИГ",
+   "fullName": "Интернациональная Исследовательская Группа",
+   "motto": "Scientia sine finibus — наука без границ",
+   "emblem": "assets/img/emblems/iig.png",
+   "colors": {
+    "primary": "#7a0019",
+    "secondary": "#e8b84a",
+    "accent": "#c8283c",
+    "dark": "#2a0008"
+   },
+   "location": "Миссия ИИГ, Кордон",
+   "user": {
+    "name": "Dr. Weiss",
+    "login": "iig-weiss",
+    "role": "Отдел анализа данных ИИГ"
+   },
+   "docs": [
+    {
+     "id": "about",
+     "title": "Об ИИГ",
+     "category": "about",
+     "file": "content/iig/about.md",
+     "org": "Интернациональная Исследовательская Группа",
+     "author": "Совет группы",
+     "meta": {}
+    },
+    {
+     "id": "caribbean",
+     "title": "Досье: Карибский эксперимент",
+     "category": "research",
+     "file": "content/iig/caribbean.md",
+     "org": "ИИГ, отдел анализа данных",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "anomalies",
+     "title": "Klassifikation: аномальные поля",
+     "category": "research",
+     "file": "content/iig/anomalies.md",
+     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "artifacts",
+     "title": "Каталог образцов",
+     "category": "research",
+     "file": "content/iig/artifacts.md",
+     "org": "Интернациональная Исследовательская Группа, лаборатория",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "psi",
+     "title": "Psi-Phänomene: обзор",
+     "category": "research",
+     "file": "content/iig/psi.md",
+     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "fauna",
+     "title": "Mutanten: полевой справочник",
+     "category": "research",
+     "file": "content/iig/fauna.md",
+     "org": "Интернациональная Исследовательская Группа, отдел полевых исследований",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "labs",
+     "title": "Лаборатории серии X",
+     "category": "objects",
+     "file": "content/iig/labs.md",
+     "org": "Интернациональная Исследовательская Группа, отдел анализа данных",
+     "author": "Dr. Weiss",
+     "meta": {}
+    },
+    {
+     "id": "protocol",
+     "title": "Протокол работы с данными",
+     "category": "about",
+     "file": "content/iig/protocol.md",
+     "org": "Интернациональная Исследовательская Группа",
+     "author": "Совет группы",
+     "meta": {}
+    },
+    {
+     "id": "personnel",
+     "title": "Состав миссии",
+     "category": "staff",
+     "file": "content/iig/personnel.md",
+     "org": "Интернациональная Исследовательская Группа",
+     "author": "Совет группы",
+     "meta": {}
+    }
+   ],
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "IIG-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "s2",
+    "theme": "science",
+    "rank": "Эксперт",
+    "reputation": "Нейтральная"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
+   ]
+  },
+  {
+   "id": "iskra",
+   "name": "Искра",
+   "fullName": "Научно-оперативная исследовательская группа «Искра»",
+   "motto": "Из искры возгорится пламя",
+   "emblem": "assets/img/emblems/iskra.png",
+   "colors": {
+    "primary": "#f08a1c",
+    "secondary": "#1aa7a0",
+    "accent": "#ffb347",
+    "dark": "#10282b"
+   },
+   "location": "Северные болота, лагерь «Искры»",
+   "user": {
+    "name": "Доктор «Арцт»",
+    "login": "artz",
+    "role": "Ведущий научно-исследовательского развития группы"
+   },
+   "docs": [
+    {
+     "id": "about",
+     "title": "О группе «Искра»",
+     "category": "about",
+     "file": "content/iskra/about.md",
+     "org": "НОИГ «Искра»",
+     "author": "Доктор «Арцт»",
+     "meta": {}
+    },
+    {
+     "id": "barrier-m",
+     "title": "Отпугиватель мутантов «Барьер-М»",
+     "category": "tech",
+     "file": "content/iskra/barrier-m.md",
+     "org": "Научно-оперативная исследовательская группа “Искра”",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено": "Профессором Фидов С.П."
+     }
+    },
+    {
+     "id": "pz-1p",
+     "title": "Пси-заслон 1П «Прототип»",
+     "category": "tech",
+     "file": "content/iskra/pz-1p.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты."
+     }
+    },
+    {
+     "id": "pz-2p",
+     "title": "Пси-заслон 2П «Спираль»",
+     "category": "tech",
+     "file": "content/iskra/pz-2p.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
+      "Происхождение": "модернизация пси-шлема первого поколения и раннего прототипа."
+     }
+    },
+    {
+     "id": "pz-3p",
+     "title": "Пси-заслон 3П «Диадема»",
+     "category": "tech",
+     "file": "content/iskra/pz-3p.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Кириллом Бурнштейном Фридрихом",
+     "meta": {
+      "Назначение": "Индивидуальное портативное средство пассивной пси-защиты.",
+      "Происхождение": "модернизация пси-шлема второго поколения и введение новых технологий, свойств и исследования пси-поглощающих сплавов на основе германия, улучшение защитного пси-заслона с помощью новой системы отражения в"
+     }
+    },
+    {
+     "id": "phenomena",
+     "title": "Феномены ЧАЗ",
+     "category": "research",
+     "file": "content/iskra/phenomena.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "",
+     "meta": {}
+    },
+    {
+     "id": "anomaly-fields",
+     "title": "Аномальные поля",
+     "category": "research",
+     "file": "content/iskra/anomaly-fields.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
+     }
+    },
+    {
+     "id": "artifacts",
+     "title": "Аномальные образования",
+     "category": "research",
+     "file": "content/iskra/artifacts.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено теориями и наблюдениями": "Профессора Кирсанова А.Н."
+     }
+    },
+    {
+     "id": "fauna",
+     "title": "Аномальная фауна",
+     "category": "research",
+     "file": "content/iskra/fauna.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "psi",
+     "title": "Пси-излучение",
+     "category": "research",
+     "file": "content/iskra/psi.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "emission",
+     "title": "Аномальный шторм «Выброс»",
+     "category": "research",
+     "file": "content/iskra/emission.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Вдохновлено теориями": "Профессора Миллера Д.Ф."
+     }
+    },
+    {
+     "id": "project-x",
+     "title": "Проект «X»",
+     "category": "research",
+     "file": "content/iskra/project-x.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "",
+     "meta": {}
+    },
+    {
+     "id": "polden",
+     "title": "Община «Полдень»",
+     "category": "communities",
+     "file": "content/iskra/polden.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт",
+     "meta": {
+      "Лидер общины": "Ведущий"
+     }
+    },
+    {
+     "id": "psi-relay",
+     "title": "Самодельный пси-ретранслятор",
+     "category": "objects",
+     "file": "content/iskra/psi-relay.md",
+     "org": "Научно-оперативная исследовательская группа «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {
+      "Статус": "Активно"
+     }
+    },
+    {
+     "id": "monolith",
+     "title": "Община «Монолит»",
+     "category": "communities",
+     "file": "content/iskra/monolith.md",
+     "org": "НОИГ «Искра»",
+     "author": "Справочный отдел",
+     "meta": {}
+    },
+    {
+     "id": "freedom",
+     "title": "Община «Свобода»",
+     "category": "communities",
+     "file": "content/iskra/freedom.md",
+     "org": "НОИГ «Искра»",
+     "author": "Справочный отдел",
+     "meta": {}
+    },
+    {
+     "id": "duty",
+     "title": "Община «Долг»",
+     "category": "communities",
+     "file": "content/iskra/duty.md",
+     "org": "НОИГ «Искра»",
+     "author": "Справочный отдел",
+     "meta": {}
+    },
+    {
+     "id": "monolith-unit",
+     "title": "Пси-установка «Монолит»",
+     "category": "objects",
+     "file": "content/iskra/monolith-unit.md",
+     "org": "НОИГ «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "rainbow-1",
+     "title": "«Радуга-1» (Выжигатель мозгов)",
+     "category": "objects",
+     "file": "content/iskra/rainbow-1.md",
+     "org": "НОИГ «Искра»",
+     "author": "Арцт Кирилл Бурнштейн Фридрихов",
+     "meta": {}
+    },
+    {
+     "id": "disketa",
+     "title": "Дискета ИИ-О/1",
+     "category": "intel",
+     "file": "content/iskra/disketa.md",
+     "org": "Носитель «Дискета», получен от общины «Полдень»",
+     "author": "ИИ-О/1",
+     "meta": {},
+     "kind": "chat",
+     "icon": "assets/img/emblems/disk-o1.png"
+    }
+   ],
+   "key": "",
+   "look": {
+    "avatar": "",
+    "wallpaperAgat": "",
+    "wallpaperLaptop": "",
+    "emblemOnDesktop": true,
+    "note": ""
+   },
+   "os": {
+    "agatName": "Окна XP",
+    "laptopName": "Окна Vista",
+    "computer": "ISKRA-PC",
+    "bios": [
+     "АГАТ-5189 ПЗУ v2.07  (c) НПО «Агат»",
+     "Процессор: К1810ВМ86М  8 МГц",
+     "Проверка ОЗУ: 640K ОК   Расширенная: 523264K ОК",
+     "НЖМД 0: «ЕС-5067» 40 ГБ ........ ОК",
+     "Сетевой адаптер ЧАЗ-NET ........ ОК"
+    ],
+    "laptopPassword": "",
+    "laptopHint": ""
+   },
+   "pda": {
+    "skin": "s2",
+    "theme": "standard",
+    "rank": "Ветеран",
+    "reputation": "Отличная"
+   },
+   "devices": [
+    "agat",
+    "laptop",
+    "pda-s2",
+    "pda-shoc",
+    "pda-cs",
+    "pda-cop"
+   ]
+  }
+ ]
+}

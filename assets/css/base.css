@@ -1,0 +1,119 @@
+:root {
+  --bg: #111210;
+  --bg2: #1a1b18;
+  --panel: #22231f;
+  --line: #3a3b34;
+  --text: #e7e2d3;
+  --muted: #9b968a;
+  --amber: #f0a43a;
+  --f-primary: #c9a54a;
+  --f-secondary: #e7e2d3;
+  --f-accent: #f0a43a;
+  --f-dark: #1a1b18;
+  color-scheme: dark;
+}
+/* Сайт стилизован под тёмный терминал в обеих темах; светлая тема лишь чуть осветляет фон. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --bg: #1b1c19; --bg2: #24251f; }
+}
+:root[data-theme="dark"] { --bg: #111210; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, var(--f-primary) 18%, transparent), transparent 70%), var(--bg);
+  color: var(--text);
+  font: 16px/1.5 "PT Sans", "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--f-accent); }
+button { font: inherit; color: inherit; }
+img { max-width: 100%; }
+.loading, .fatal { padding: 80px 16px; text-align: center; color: var(--muted); }
+.fatal h1 { color: var(--text); }
+
+.hero { max-width: 960px; margin: 0 auto; padding: 56px 16px 24px; text-align: center; }
+.hero-mark { font-size: 44px; color: var(--amber); line-height: 1; }
+.hero h1 { font: 600 clamp(32px, 6vw, 56px)/1.1 Oswald, sans-serif; letter-spacing: .04em; text-transform: uppercase; margin: 12px 0; }
+.hero p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+
+.factions { max-width: 1100px; margin: 0 auto; padding: 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 16px; }
+.fcard {
+  display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center;
+  padding: 18px; border-radius: 6px; text-decoration: none; color: var(--text);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--f-primary) 30%, #151612), #151612 70%);
+  border: 1px solid color-mix(in srgb, var(--f-primary) 55%, #000);
+  transition: transform .15s, box-shadow .15s;
+}
+.fcard:hover, .fcard:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 28px color-mix(in srgb, var(--f-primary) 35%, transparent); outline: none; }
+.fcard img { width: 96px; height: 96px; object-fit: contain; filter: drop-shadow(0 4px 8px #000a); }
+.fcard h2 { font: 600 26px/1.1 Oswald, sans-serif; margin: 0 0 4px; text-transform: uppercase; color: var(--f-secondary); }
+.fcard p { margin: 0; color: var(--text); font-size: 14px; }
+.fcard small { color: var(--muted); font-style: italic; }
+.fcard-devs { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font: 600 11px/1.6 "PT Sans Narrow", sans-serif; text-transform: uppercase; letter-spacing: .06em; background: #2c3b26; color: #9fd68a; }
+.badge.st-locked { background: #4a1616; color: #ff9b8f; }
+.badge.st-wiped { background: #333; color: #ddd; }
+.badge.st-corrupted { background: #4a3a10; color: #ffd36b; }
+.badge.st-offline { background: #000; color: #888; border: 1px solid #333; }
+.badge.st-custom { background: #183449; color: #9fd3ff; }
+
+.site-foot { max-width: 1100px; margin: 24px auto 0; padding: 24px 16px 40px; display: flex; gap: 16px; justify-content: space-between; flex-wrap: wrap; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+.topnav { max-width: 1100px; margin: 0 auto; padding: 16px; }
+.topnav a { text-decoration: none; }
+.fhead { max-width: 1100px; margin: 0 auto; padding: 8px 16px 24px; display: flex; gap: 20px; align-items: center; }
+.fhead img { width: 120px; height: 120px; object-fit: contain; }
+.fhead h1 { font: 600 clamp(30px, 5vw, 48px)/1 Oswald, sans-serif; text-transform: uppercase; margin: 0 0 6px; color: var(--f-secondary); }
+.fhead p { margin: 0; }
+.fhead small { color: var(--muted); font-style: italic; }
+
+.devices { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.dcard { display: block; padding: 16px; border-radius: 6px; background: var(--bg2); border: 1px solid var(--line); text-decoration: none; color: var(--text); transition: border-color .15s, transform .15s; }
+.dcard:hover, .dcard:focus-visible { border-color: var(--f-accent); transform: translateY(-2px); outline: none; }
+.dcard h2 { font: 500 22px/1.2 Oswald, sans-serif; margin: 12px 0 4px; text-transform: uppercase; }
+.dcard p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.dthumb { height: 170px; border-radius: 4px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.dthumb img { width: 64px; height: 64px; object-fit: contain; position: relative; z-index: 1; }
+.dthumb-agat { background: #121212; border: 14px solid #1c1c1c; border-bottom-width: 34px; border-radius: 12px; }
+.dthumb-agat::before { content: ""; position: absolute; inset: 0; background: linear-gradient(#3a6fd8, #2a55b0) ; border-radius: 10px; box-shadow: inset 0 0 40px #000a; }
+.dthumb-agat::after { content: "АГАТ 5189"; position: absolute; bottom: -27px; font: 12px "PT Mono", monospace; color: #ccc; }
+.dthumb-laptop { background: linear-gradient(160deg, color-mix(in srgb, var(--f-primary) 55%, #000), #06121a); border: 10px solid #222; border-radius: 8px 8px 0 0; }
+.dthumb-pda { background: #1a1917; border: 12px solid #6b6b66; border-radius: 18px; box-shadow: inset 0 0 0 3px #222; }
+.dthumb-pda::before { content: "Заметки   Сведения"; position: absolute; top: 8px; font: 11px Oswald, sans-serif; color: #aaa; }
+
+.doclist { max-width: 1100px; margin: 24px auto 48px; padding: 0 16px; }
+.doclist h2 { font: 500 20px Oswald, sans-serif; text-transform: uppercase; color: var(--muted); }
+.doclist ul { list-style: none; padding: 0; margin: 0; columns: 2 280px; }
+.doclist li { break-inside: avoid; padding: 6px 0; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+.doclist li span { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
+.broadcast { background: #3a0d0d; color: #ffd1c9; border-bottom: 1px solid #7a1d1d; overflow: hidden; white-space: nowrap; font: 600 14px/32px "PT Mono", monospace; }
+.broadcast span { display: inline-block; padding-left: 100%; animation: marquee 22s linear infinite; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+.draft-note { background: #3a2f0d; color: #ffe39a; text-align: center; font-size: 13px; padding: 4px 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .broadcast span { padding-left: 16px; }
+}
+@media (max-width: 560px) {
+  .fcard { grid-template-columns: 64px 1fr; }
+  .fcard img { width: 64px; height: 64px; }
+  .fhead img { width: 80px; height: 80px; }
+}
+
+/* Заглушка без выбранного терминала */
+.idle { min-height: 80vh; display: grid; place-content: center; text-align: center; gap: 8px; padding: 32px 16px; color: var(--muted); }
+.idle-mark { font-size: 54px; color: var(--amber); line-height: 1; animation: idle-pulse 2.4s ease-in-out infinite; }
+.idle h1 { font: 600 clamp(26px, 5vw, 40px)/1.1 Oswald, sans-serif; text-transform: uppercase; letter-spacing: .05em; color: var(--text); margin: 8px 0 0; }
+@keyframes idle-pulse { 50% { opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { .idle-mark { animation: none; } }
+.dthumb-pda-s2 { border-color: #232421; background: #161513; }
+.dthumb-pda-shoc { border-color: #a9aca8; background: #20251a; }
+.dthumb-pda-shoc::before, .dthumb-pda-cs::before, .dthumb-pda-cop::before { content: "Энциклопедия   Сведения"; }
+.dthumb-pda-cs { border-color: #6b4a2c; background: #2a1d12; }
+.dthumb-pda-cop { border-color: #4a585c; background: #151d20; }
+.preview-back { display: block; padding: 6px 16px; background: #3a2a10; color: #f0c27a; font-size: 13px; text-decoration: none; flex: none; }

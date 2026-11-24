@@ -1,0 +1,41 @@
+/* Общая типографика документов внутри устройств */
+.doc { padding: 18px 22px 28px; }
+.doc-loading { padding: 20px; opacity: .7; }
+.doc-head { display: flex; gap: 14px; align-items: center; border-bottom: 2px solid currentColor; padding-bottom: 10px; margin-bottom: 10px; }
+.doc-emblem { width: 58px; height: 58px; object-fit: contain; flex: none; }
+.doc-org { font-size: .8em; opacity: .75; text-transform: uppercase; letter-spacing: .04em; }
+.doc-title { font-size: 1.45em; line-height: 1.15; margin: 2px 0; }
+.doc-author { font-size: .85em; opacity: .8; }
+.doc-meta { margin: 0 0 14px; font-size: .9em; }
+.doc-meta div { display: flex; gap: 6px; flex-wrap: wrap; }
+.doc-meta dt { font-weight: 700; }
+.doc-meta dd { margin: 0; }
+.doc-body h2, .doc-body h3, .doc-body h4 { margin: 1.2em 0 .4em; line-height: 1.2; }
+.doc-body h4 { font-size: 1.08em; }
+.doc-body p { margin: .5em 0; }
+.doc-body ul, .doc-body ol { margin: .4em 0; padding-left: 1.4em; }
+.doc-body li { margin: .15em 0; }
+.doc-body blockquote { margin: .8em 0; padding: .4em .9em; border-left: 3px solid currentColor; opacity: .85; }
+.doc-body blockquote p { margin: .2em 0; }
+.md-fig { margin: .8em 0; text-align: center; }
+.md-img { max-width: 100%; height: auto; max-height: 360px; border: 1px solid rgba(127, 127, 127, .4); background: #fff1; }
+.md-table { overflow-x: auto; margin: .8em 0; }
+.md-table table { border-collapse: collapse; width: 100%; font-size: .9em; }
+.md-table th, .md-table td { border: 1px solid rgba(127, 127, 127, .45); padding: 5px 7px; vertical-align: top; text-align: left; }
+.md-table th { background: rgba(127, 127, 127, .15); }
+.md-table td .md-img { max-height: 110px; max-width: 120px; }
+.muted { opacity: .6; }
+
+/* «Дискета»: запрос — ответ */
+.chat { display: flex; flex-direction: column; height: 100%; min-height: 0; font: 14px/1.45 "PT Mono", monospace; background: #050806; color: #cfe8d0; }
+.chat-log { flex: 1; overflow: auto; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; min-height: 120px; }
+.chat-msg { white-space: pre-wrap; }
+.chat-system { color: #e0e0e0; }
+.chat-note { color: #8c9a8d; font-size: 12px; border-left: 2px solid #3f5a41; padding-left: 8px; }
+.chat-q { color: #5cff7a; }
+.chat-a { color: #ff5a4f; }
+.chat-menu { border-top: 1px solid #1f3a24; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; max-height: 40%; overflow: auto; background: #0a120b; }
+.chat-menu-title { color: #8c9a8d; font-size: 12px; }
+.chat-menu button { text-align: left; background: none; border: 1px solid transparent; color: #5cff7a; padding: 3px 6px; cursor: pointer; font: inherit; }
+.chat-menu button:hover, .chat-menu button:focus-visible { border-color: #2f6b3a; background: #0f2414; outline: none; }
+.chat-menu button:disabled { opacity: .4; cursor: default; }

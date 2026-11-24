@@ -1,0 +1,136 @@
+/* ===== Рабочий стол в стиле XP (собственная перерисовка, без системных ресурсов) ===== */
+.xp { font: 12px/1.35 Tahoma, Verdana, "PT Sans", sans-serif; color: #000; background: #000; }
+.bios { margin: 0; padding: 22px; color: #c8c8c8; font: 15px/1.5 "PT Mono", monospace; white-space: pre-wrap; height: 100%; background: #000; }
+
+.xp-splash { height: 100%; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #fff; }
+.xp-splash img { width: 120px; height: 120px; object-fit: contain; }
+.xp-splash-name { font: 300 30px/1.1 "PT Sans", sans-serif; text-align: center; }
+.xp-splash-name b { color: #ff7f1f; font-weight: 700; font-style: italic; }
+.xp-splash-name small { display: block; font-size: 13px; color: #aaa; margin-top: 4px; }
+.xp-splash-bar { width: 150px; height: 18px; border: 2px solid #b2b2b2; border-radius: 5px; padding: 2px; overflow: hidden; position: relative; }
+.xp-splash-bar i { position: absolute; top: 3px; width: 9px; height: 10px; border-radius: 2px; background: linear-gradient(#a7c5ff, #2f62e0 60%, #6f9bff); animation: xp-bar 1.6s linear infinite; }
+.xp-splash-bar i:nth-child(2) { animation-delay: .12s; }
+.xp-splash-bar i:nth-child(3) { animation-delay: .24s; }
+@keyframes xp-bar { from { left: -30px; } to { left: 160px; } }
+.xp-splash-copy { position: absolute; bottom: 20px; font-size: 11px; color: #777; }
+
+.xp-welcome { height: 100%; display: grid; grid-template-rows: 70px 1fr 70px; background: #5a7edc; color: #fff; }
+.xp-welcome-top, .xp-welcome-bot { background: #00309c; border-bottom: 2px solid #f0a040; }
+.xp-welcome-bot { border-bottom: 0; border-top: 2px solid #5a8cf0; display: flex; align-items: center; padding: 0 30px; font-size: 14px; }
+.xp-welcome-mid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; background: radial-gradient(60% 80% at 20% 30%, #7c9cf0, #5a7edc); }
+.xp-welcome-left { text-align: right; padding-right: 30px; border-right: 1px solid #a8c0ff; }
+.xp-welcome-left img { width: 110px; height: 110px; object-fit: contain; }
+.xp-welcome-left p { font-size: 16px; margin: 8px 0 0; }
+.xp-welcome-users { padding-left: 30px; }
+.xp-user { display: flex; gap: 12px; align-items: center; background: none; border: 0; color: #fff; cursor: pointer; padding: 8px; border-radius: 8px; text-align: left; }
+.xp-user img { width: 64px; height: 64px; object-fit: contain; border: 3px solid #fff; border-radius: 6px; background: #fff3; }
+.xp-user b { display: block; font-size: 20px; font-weight: 400; }
+.xp-user small { font-size: 12px; opacity: .85; }
+.xp-user:hover, .xp-user:focus-visible { background: #0f3fa855; outline: none; }
+.xp-welcome.is-loading .xp-welcome-users::after { content: "Загрузка личных параметров..."; display: block; padding: 10px; font-size: 14px; }
+
+.xp-desktop { position: absolute; inset: 0 0 30px 0; overflow: hidden;
+  background:
+    var(--emblem) right 40px bottom 40px / 220px no-repeat,
+    radial-gradient(140% 60% at 30% 110%, color-mix(in srgb, var(--f-primary) 60%, #2f6d22) 48%, transparent 49%),
+    radial-gradient(120% 50% at 90% 115%, color-mix(in srgb, var(--f-primary) 40%, #3f8a2b) 50%, transparent 51%),
+    linear-gradient(#2f6cd8, #8fbaf2 60%, #cfe2ff);
+}
+.xp-desktop.has-wall { background: var(--emblem) right 40px bottom 40px / 220px no-repeat, var(--wall) center / cover no-repeat, #000; }
+.xp-desktop.no-emblem { background-size: 0 0, auto, auto, auto; }
+.xp-desktop.has-wall.no-emblem { background: var(--wall) center / cover no-repeat, #000; }
+.xp-icons { position: absolute; top: 10px; left: 8px; bottom: 10px; display: flex; flex-direction: column; flex-wrap: wrap; gap: 6px; align-content: flex-start; z-index: 1; }
+.xp-icon { width: 84px; background: none; border: 1px solid transparent; padding: 4px 2px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; color: #fff; }
+.xp-icon img { width: 38px; height: 38px; filter: drop-shadow(1px 2px 1px #0007); }
+.xp-icon span { font-size: 11px; text-shadow: 1px 1px 2px #000, 0 0 3px #000; text-align: center; line-height: 1.2; }
+.xp-icon.is-sel span, .xp-icon:focus-visible span { background: #316ac5; text-shadow: none; }
+.xp-icon:focus-visible { outline: 1px dotted #fff; }
+.xp-windows { position: absolute; inset: 0; }
+
+.xp-taskbar { position: absolute; left: 0; right: 0; bottom: 0; height: 30px; display: flex; align-items: stretch; z-index: 30;
+  background: linear-gradient(#3168d5, #4993e6 8%, #2e66d2 15%, #245edb 85%, #1941a5); }
+.xp-start { display: flex; align-items: center; gap: 4px; padding: 0 18px 0 8px; border: 0; cursor: pointer; color: #fff; font: italic 700 17px/1 "PT Sans", Tahoma, sans-serif; text-shadow: 1px 1px 2px #0008;
+  background: linear-gradient(#3c9a3c, #59b74e 10%, #3f9a35 50%, #2f7f28); border-radius: 0 12px 12px 0; box-shadow: inset -2px 0 3px #0005; }
+.xp-start img { width: 22px; height: 22px; object-fit: contain; }
+.xp-start:hover { filter: brightness(1.1); }
+.xp-tasks { flex: 1; display: flex; gap: 3px; padding: 3px 6px; overflow: hidden; }
+.tb-item { display: flex; align-items: center; gap: 4px; max-width: 160px; min-width: 0; padding: 0 8px; border: 0; border-radius: 3px; cursor: pointer; color: #fff; font-size: 11px; background: #3c81f3; box-shadow: inset 0 0 0 1px #1b4fb8; }
+.tb-item img { width: 16px; height: 16px; }
+.tb-item span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tb-item.is-active { background: #1e52b7; box-shadow: inset 1px 1px 2px #0006; }
+.xp-tray { display: flex; align-items: center; gap: 8px; padding: 0 12px; color: #fff; font-size: 11px; background: linear-gradient(#0c59b9, #139ee9 10%, #18b9ed 15%, #1397e4 85%, #0b74c6); border-left: 1px solid #092e7e; }
+.xp-tray-ico { font-size: 12px; }
+
+.xp-startmenu { position: absolute; left: 0; bottom: 30px; width: 380px; z-index: 31; border-radius: 8px 8px 0 0; overflow: hidden; box-shadow: 2px -2px 10px #0008; background: #fff; }
+.xp-sm-head { display: flex; align-items: center; gap: 10px; padding: 8px 10px; color: #fff; font-size: 14px; background: linear-gradient(#1868ce, #0e60cb 50%, #3d8af0); }
+.xp-sm-head img { width: 42px; height: 42px; object-fit: contain; border: 2px solid #fff; border-radius: 4px; background: #fff3; }
+.xp-sm-cols { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid #f0a040; }
+.xp-sm-cols ul { list-style: none; margin: 0; padding: 6px 0; }
+.xp-sm-left { background: #fff; }
+.xp-sm-right { background: #d3e5fa; border-left: 1px solid #95bdee; }
+.xp-sm-cols button { width: 100%; display: flex; align-items: center; gap: 6px; padding: 4px 8px; border: 0; background: none; cursor: pointer; text-align: left; font-size: 11px; }
+.xp-sm-cols button img { width: 22px; height: 22px; flex: none; }
+.xp-sm-cols button:hover, .xp-sm-cols button:focus-visible { background: #316ac5; color: #fff; outline: none; }
+.xp-sm-foot { display: flex; justify-content: flex-end; gap: 6px; padding: 6px; background: linear-gradient(#1868ce, #3d8af0); }
+.xp-sm-foot button { border: 0; background: none; color: #fff; cursor: pointer; font-size: 11px; padding: 4px 8px; }
+.xp-sm-foot button:hover { background: #fff3; }
+.xp-off { height: 100%; display: grid; place-items: center; background: #000; color: #f0a040; font: 18px "PT Sans", sans-serif; text-align: center; padding: 20px; }
+
+/* Окна XP */
+.xp .win { position: absolute; display: flex; flex-direction: column; background: #ece9d8; border: 3px solid #0831d9; border-top: 0; border-radius: 8px 8px 0 0; box-shadow: 2px 3px 10px #0007; min-width: 220px; }
+.xp .win:not(.is-active) { border-color: #7a96df; }
+.xp .win-title { height: 28px; flex: none; display: flex; align-items: center; gap: 6px; padding: 0 4px 0 6px; color: #fff; font: 700 13px/1 "PT Sans", Tahoma, sans-serif; text-shadow: 1px 1px #0a1e6e; border-radius: 7px 7px 0 0; cursor: default; user-select: none; touch-action: none;
+  background: linear-gradient(#0997ff, #0053ee 8%, #0050ee 40%, #06f 88%, #0053ee 94%, #003dd7); margin: 0 -3px; }
+.xp .win:not(.is-active) .win-title { background: linear-gradient(#7697e7, #7e9ee3 40%, #94afe8); }
+.xp .win-ico { width: 16px; height: 16px; }
+.xp .win-name { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.xp .win-btns { display: flex; gap: 2px; }
+.xp .wb { width: 21px; height: 21px; border: 1px solid #fff; border-radius: 3px; background: linear-gradient(135deg, #3c8cf3, #1660e8); cursor: pointer; position: relative; padding: 0; }
+.xp .wb i { position: absolute; inset: 0; }
+.xp .wb-min i::after { content: ""; position: absolute; left: 5px; bottom: 5px; width: 7px; height: 3px; background: #fff; }
+.xp .wb-max i::after { content: ""; position: absolute; inset: 4px; border: 1px solid #fff; border-top-width: 3px; }
+.xp .wb-close { background: linear-gradient(135deg, #e97e5c, #c4381a); }
+.xp .wb-close i::before, .xp .wb-close i::after { content: ""; position: absolute; left: 9px; top: 3px; width: 2px; height: 13px; background: #fff; transform: rotate(45deg); }
+.xp .wb-close i::after { transform: rotate(-45deg); }
+.xp .win-body { flex: 1; min-height: 0; overflow: auto; background: #fff; margin: 0; border-top: 1px solid #0831d9; }
+.win.is-max { left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; border-radius: 0; }
+.win[hidden] { display: none; }
+
+.xp-doc { font: 13px/1.5 "PT Sans", Tahoma, sans-serif; color: #111; background: #fff; }
+.xp-doc .doc-head { color: var(--f-primary); }
+.xp-doc .doc-title { color: #111; }
+.xp-doc .doc-body h3 { color: var(--f-primary); border-bottom: 1px solid #ddd; padding-bottom: 2px; }
+.xp-term { height: 100%; }
+.xp-empty { padding: 24px; color: #555; }
+
+.xp-explorer { display: flex; flex-direction: column; height: 100%; background: #fff; }
+.xp-ex-bar { display: flex; gap: 12px; padding: 3px 8px; background: #ece9d8; border-bottom: 1px solid #d4d0c8; }
+.xp-ex-addr { display: flex; align-items: center; gap: 6px; padding: 3px 8px; background: #ece9d8; color: #555; border-bottom: 1px solid #aca899; }
+.xp-ex-addr input { flex: 1; font: inherit; border: 1px solid #7f9db9; padding: 2px 4px; }
+.xp-ex-main { flex: 1; min-height: 0; display: grid; grid-template-columns: 170px 1fr; }
+.xp-ex-side { background: linear-gradient(#748aff, #4057d3); padding: 10px; overflow: auto; }
+.xp-ex-panel { background: #d6dff7; border-radius: 4px 4px 0 0; margin-bottom: 10px; overflow: hidden; }
+.xp-ex-panel h4 { margin: 0; padding: 4px 8px; background: linear-gradient(90deg, #fff, #c6d3f7); color: #215dc6; font-size: 11px; }
+.xp-ex-panel p { margin: 0; padding: 6px 8px; font-size: 11px; color: #215dc6; }
+.xp-ex-files { padding: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; align-content: start; overflow: auto; }
+.xp-file { background: none; border: 1px solid transparent; padding: 4px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; text-align: center; }
+.xp-file img { width: 36px; height: 36px; }
+.xp-file:hover, .xp-file:focus-visible { background: #c1d2ee; border-color: #316ac5; outline: none; }
+
+/* Far: синяя двухпанельная оболочка (как на референсе) */
+.far { height: 100%; display: flex; flex-direction: column; background: #000080; color: #5ff; font: 13px/1.35 "PT Mono", monospace; }
+.far-menu { display: flex; gap: 18px; padding: 2px 10px; background: #008080; color: #000; }
+.far-panels { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.4fr; gap: 2px; padding: 2px; }
+.far-panel { border: 3px double #5ff; display: flex; flex-direction: column; min-height: 0; }
+.far-path { text-align: center; color: #000; background: #5ff; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.far-list { list-style: none; margin: 0; padding: 2px 0; overflow: auto; flex: 1; }
+.far-list li { display: flex; justify-content: space-between; gap: 8px; padding: 0 6px; cursor: pointer; white-space: nowrap; }
+.far-list li span:first-child { overflow: hidden; text-overflow: ellipsis; }
+.far-list li span:last-child { color: #ff5; }
+.far-list li:hover, .far-list li.is-cur, .far-list li:focus-visible { background: #008080; color: #000; outline: none; }
+.far-list li.is-cur span:last-child, .far-list li:hover span:last-child { color: #000; }
+.far-status { padding: 0 8px; color: #ff5; border-top: 1px solid #5ff; }
+.far-keys { display: flex; background: #000; color: #fff; }
+.far-keys span { flex: 1; padding: 0 4px; white-space: nowrap; overflow: hidden; }
+.far-keys b { background: #008080; color: #000; font-weight: 400; margin-left: 2px; padding: 0 3px; }
+.win-far .win-body { background: #000080; }
