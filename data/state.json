@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T23:00:00Z",
+ "updatedAt": "2026-11-24T00:20:11.084Z",
  "adminHash": "00556331f1922e05b96a2cdc254b3e0de0095e9114691803427337fef17bdd4d",
  "broadcast": "",
  "screens": {
@@ -7,128 +7,152 @@
    "agat": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "laptop": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-s2": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-shoc": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cs": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cop": {
     "status": "normal",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    }
   },
   "clear-sky": {
    "agat": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "laptop": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-s2": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-shoc": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cs": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cop": {
-    "status": "normal",
+    "status": "wiped",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    }
   },
   "iig": {
    "agat": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "laptop": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-s2": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-shoc": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cs": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cop": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    }
   },
   "iskra": {
    "agat": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "laptop": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-s2": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-shoc": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cs": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    },
    "pda-cop": {
-    "status": "normal",
+    "status": "locked",
     "message": "",
-    "code": ""
+    "code": "",
+    "title": ""
    }
   }
  },
